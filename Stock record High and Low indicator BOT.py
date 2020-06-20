@@ -24,11 +24,9 @@ Starting from 2000 to 2020
 
 # 2nd Objective to indicate the High & Low of Current / End of day stock price to current year High or Low price.
 
-# 3rd Objective to indicate the High & Low of Current / End of day stock price to current 6 Month High or Low price.
+# 3rd Objective to indicate the High & Low of Current / End of day stock price to 52 week High or Low price.
 
 # 4th Objective to indicate the High & Low of Current / End of day stock price to "financial crisis" year High or Low price.
-
-
 
 
 # Importing the libraries
@@ -38,12 +36,13 @@ import pandas as pd
 import datetime
 from nsetools import Nse
 
-
 # 1st Objective to indicate the High & Low of Current / End of day stock price to 5 yaers Avg. High or Low price.
 
-# Importing the NIFTY dataset from PC file
-df_ahal = pd.read_csv('NIFTY_AH_AL.csv',index_col = 'Symbol')
-dtfrm = pd.DataFrame(data=df_ahal)
+# Importing the NIFTY avrage low dataset from PC file
+df_al = pd.read_csv('NIFTY_2015to2019_AL.csv',index_col = 'Symbol')
+dt_al = pd.DataFrame(data=df_al)
+
+
 #dataset = pd.read_csv('NIFTY50_all_with_new_tickers.csv')
 #H_table = pd.pivot_table(dataset, values=['High'], index=['Date'],columns=['Symbol'], aggfunc={'High': np.mean})
 #L_table = pd.pivot_table(dataset, values=['Low'], index=['Date'],columns=['Symbol'], aggfunc={'Low': np.mean})
@@ -54,52 +53,136 @@ nse = Nse()
 #print (nse)
 
 fifty = []
-for i,r in df_ahal.iterrows():
+for i,r in df_al.iterrows():
     q = nse.get_quote(i)
     fifty.append(q) 
-    #print(q)
-
-
-
-# if the index is not the symbol and one of the row is 'Symbol'
-# for i in df_ahal['Symbol']:
-#     q = nse.get_quote(i)
-#     fifty.append(q) 
-#     #print(q)
-
+    #print(q)# Importing the NIFTY dataset from NSE live site / portel 
     
-#list of symbol and day low treded value 
+#list of NSE Live data symbol and day High & low treded value 
 dayLow_fifty = []
+dayHigh_fifty = []
 symbol_fifty = []
+shl_52=[]
+h_52=[]
+l_52=[]
 for index in range(len(fifty)):
     for key in fifty[index]:
         if key == 'dayLow':
+            #retrive each value
             a = fifty[index]['symbol']
             b = fifty[index]['dayLow']
-            dayLow_fifty.append(b) 
+            c = fifty[index]['dayHigh']
+            d = fifty[index]['high52']
+            e = fifty[index]['low52']
+            #appended values
             symbol_fifty.append(a)
+            dayLow_fifty.append(b)
+            dayHigh_fifty.append(c)
+            h_52.append(d)
+            l_52.append(e)
+            shl_52.append([a,d,e])
             
-            
-dtfrm['TodaysLow'] = dayLow_fifty
+
+# added todays low value in data frame
+dt_al['TodaysLow'] = dayLow_fifty
 
 ##Logic      
 ##For Todays DayLow is less than previous 5 years avrage low then it will print the Symbol and Todays Low price.
             
-for ind in range(len(dtfrm)):
-    if ((dtfrm.iloc[ind][0:-1]>=dtfrm.iloc[ind][-1]).all()):
-        print(dtfrm.index[ind],dtfrm.iloc[ind][-1])
-         
+for ind in range(len(dt_al)):
+    if ((dt_al.iloc[ind][0:-1]>=dt_al.iloc[ind][-1]).all()):
+        print("The Todays DayLow is less than previous 5 years avrage low "+dt_al.index[ind],dt_al.iloc[ind][-1])
         
+##For Todays DayHigh is greter than previous 5 years avrage low then it will print the Symbol and Todays Low price.
+                
+# Importing the NIFTY avrage High dataset from PC file
+
+df_ah = pd.read_csv('NIFTY_2015to2019_AH.csv',index_col = 'Symbol')
+dt_ah = pd.DataFrame(data=df_ah)
+    
+# added todays High value in data frame from list of symbol and day low treded value 
+dt_ah['TodaysHigh'] = dayHigh_fifty
+
+          
+for ind in range(len(dt_ah)):
+    if ((dt_ah.iloc[ind][0:-1]<=dt_ah.iloc[ind][-1]).all()):
+        print("The Todays DayHigh is greter than previous 5 years avrage High "+dt_ah.index[ind],dt_ah.iloc[ind][-1])
+
+
+# 2nd Objective to indicate the High & Low of Current / End of day stock price to current year High or Low price.
+# Importing the NIFTY current year dataset from PC file
+df_cy = pd.read_csv('NIFTY_2020.csv',index_col = 'Symbol')
+dt_cy = pd.DataFrame(data=df_cy)
+    
+
+# added todays low & High value in data frame
+dt_cy['TodaysLow'] = dayLow_fifty
+dt_cy['TodaysHigh'] = dayHigh_fifty
+
+##Logic      
+##For Todays DayLow is less than current years avrage low then it will print the Symbol and Todays Low price.
+            
+for ind in range(len(dt_cy)):
+    if ((dt_cy.iloc[ind][1:-2:2]>=dt_cy.iloc[ind][-2]).all()):
+        print("The Todays DayLow is less than current years avrage low "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
+
+    
+        
+##For Todays DayHigh is greter than current years avrage low then it will print the Symbol and Todays Low price.
+          
+for ind in range(len(dt_cy)):
+    if ((dt_cy.iloc[ind][0:-1:2]<=dt_cy.iloc[ind][-1]).all()):
+        print("The Todays DayHigh is greter than current years avrage High "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
         
 
 
+# 3rd Objective to indicate the High & Low of Current / End of day stock price to 52 week High or Low price.
+#Creating data frame for 52 week high low
+
+dt_shl_52 = pd.DataFrame(data=shl_52,columns=['Symbols','High_52w','Low_52w'])
+
+dt_shl_52 = dt_shl_52.set_index('Symbols')
     
-    
+#print('List of current year 52 week high low: '+dt_shl_52)    
+
+# added todays low & High value in data frame
+dt_shl_52['TodaysHigh'] = dayHigh_fifty
+dt_shl_52['TodaysLow'] = dayLow_fifty
+
+##Logic      
+##For Todays DayLow is less than current 52 week low then it will print the Symbol and Todays Low price.
+            
+for ind in range(len(dt_cy)):
+    if ((dt_shl_52.iloc[ind][1:-2:2]>=dt_shl_52.iloc[ind][-1]).all()):
+        print("The Todays DayLow is less than current 52 week low "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
+
+for ind in range(len(dt_cy)):
+    if ((dt_shl_52.iloc[ind][0:-2:2]<=dt_shl_52.iloc[ind][-2]).all()):
+        print("The Todays DayHigh is greter than current 52 week High "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
 
 
-    
-    
 
+# 4th Objective to indicate the High & Low of Current / End of day stock price to "financial crisis" year High or Low price.
+# Importing the NIFTY financial crisis 2008 2009 2010 2020 dataset from PC file
+df_fc = pd.read_csv('NIFTY_FC.csv',index_col = 'Symbol')
+dt_fc = pd.DataFrame(data=df_fc)
+
+# added todays low & High value in data frame
+dt_fc['TodaysHigh'] = dayHigh_fifty
+dt_fc['TodaysLow'] = dayLow_fifty
+
+
+
+##Logic      
+##For Todays DayLow is less than financial crisis year low then it will print the Symbol and Todays Low price.
+            
+for ind in range(len(dt_cy)):
+    if ((dt_fc.iloc[ind][1:-2:2]>=dt_fc.iloc[ind][-1]).all()):
+        print("The Todays DayLow is less than financial crisis year low "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
+
+for ind in range(len(dt_cy)):
+    if ((dt_fc.iloc[ind][0:-2:2]<=dt_fc.iloc[ind][-2]).all()):
+        print("The Todays DayHigh is greter than financial crisis year High "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
 
 
 
