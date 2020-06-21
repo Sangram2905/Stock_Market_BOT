@@ -32,6 +32,7 @@ Ideal Run time is before market open!!!!
 
 # 4th Objective to indicate the High & Low of Current / End of day stock price to "financial crisis" year High or Low price.
 
+# 5th Objective to take daily list of top losing and gaining stocks for the last trading session.
 
 # Importing the libraries
 import numpy as np
