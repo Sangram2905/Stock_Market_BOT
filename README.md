@@ -11,3 +11,5 @@ The BOT’s are as follows :
 8] Event indicator (Quarterly result, Dividend, F&O expiry date ) BOT
 9] Market Movers / Promoters person portfolio reader BOT
 10] Suggestion BOT for (Long, Short, Intraday) stock buy & sell (in all segment Eq. & F&O)
+11] Stock record High and Low indicator BOT  (Done) {Best time to run program is 30 min before opening Market}
+12] Simple Option valuation Calculate 
