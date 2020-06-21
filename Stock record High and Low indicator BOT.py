@@ -6,7 +6,7 @@
 
 Created on Thu Jun 18 15:39:12 2020
 
-@author: Sangram Phadke
+
 
 #Stock record High and Low indicator BOT
 
@@ -19,8 +19,13 @@ SHREECEM,SUNPHARMA,TATAMOTORS,TATASTEEL,TCS,TECHM,TITAN,ULTRACEMCO,UPL,VEDL,WIPR
 
 Starting from 2000 to 2020
 ## Stock split is not considerd price pu as it is...!!!
+NSE API used to install in python IDE
+##pip install nsetools --trusted-host pypi.org --trusted-host files.pythonhosted.org  --no-warn-script-location
 
 Ideal Run time is before market open!!!! 
+
+@author: Sangram Phadke
+
 """
 
 
