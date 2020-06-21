@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 """
 #Stock record High and Low indicator BOT
 
@@ -19,7 +20,10 @@ SHREECEM,SUNPHARMA,TATAMOTORS,TATASTEEL,TCS,TECHM,TITAN,ULTRACEMCO,UPL,VEDL,WIPR
 Starting from 2000 to 2020
 ## Stock split is not considerd price pu as it is...!!!
 
+Ideal Run time is before market open!!!! 
 """
+
+
 # 1st Objective to indicate the High & Low of Current / End of day stock price to 5 yaers Avg. High or Low price.
 
 # 2nd Objective to indicate the High & Low of Current / End of day stock price to current year High or Low price.
@@ -36,6 +40,10 @@ import pandas as pd
 import datetime
 from nsetools import Nse
 
+# Importing the NIFTY dataset from NSE live site / portel 
+nse = Nse() # NSE object creation
+#print (nse)
+
 # 1st Objective to indicate the High & Low of Current / End of day stock price to 5 yaers Avg. High or Low price.
 
 # Importing the NIFTY avrage low dataset from PC file
@@ -48,9 +56,7 @@ dt_al = pd.DataFrame(data=df_al)
 #L_table = pd.pivot_table(dataset, values=['Low'], index=['Date'],columns=['Symbol'], aggfunc={'Low': np.mean})
 #dfahal_ex = pd.read_excel('NIFTY_AH_AL.xlsx', sheet_name= 'NIFTY_AH_AL')
 
-# Importing the NIFTY dataset from NSE live site / portel 
-nse = Nse()
-#print (nse)
+
 
 fifty = []
 for i,r in df_al.iterrows():
@@ -67,7 +73,7 @@ h_52=[]
 l_52=[]
 for index in range(len(fifty)):
     for key in fifty[index]:
-        if key == 'dayLow':
+        if key == 'symbol':
             #retrive each value
             a = fifty[index]['symbol']
             b = fifty[index]['dayLow']
@@ -150,13 +156,13 @@ dt_shl_52['TodaysHigh'] = dayHigh_fifty
 dt_shl_52['TodaysLow'] = dayLow_fifty
 
 ##Logic      
-##For Todays DayLow is less than current 52 week low then it will print the Symbol and Todays Low price.
+##For Todays stock price is less or greter than current 52 week then it will print the Symbol and Todays Low price.
             
-for ind in range(len(dt_cy)):
+for ind in range(len(dt_shl_52)):
     if ((dt_shl_52.iloc[ind][1:-2:2]>=dt_shl_52.iloc[ind][-1]).all()):
         print("The Todays DayLow is less than current 52 week low "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
 
-for ind in range(len(dt_cy)):
+for ind in range(len(dt_shl_52)):
     if ((dt_shl_52.iloc[ind][0:-2:2]<=dt_shl_52.iloc[ind][-2]).all()):
         print("The Todays DayHigh is greter than current 52 week High "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
 
@@ -176,13 +182,95 @@ dt_fc['TodaysLow'] = dayLow_fifty
 ##Logic      
 ##For Todays DayLow is less than financial crisis year low then it will print the Symbol and Todays Low price.
             
-for ind in range(len(dt_cy)):
+for ind in range(len(dt_fc)):
     if ((dt_fc.iloc[ind][1:-2:2]>=dt_fc.iloc[ind][-1]).all()):
         print("The Todays DayLow is less than financial crisis year low "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
 
-for ind in range(len(dt_cy)):
+for ind in range(len(dt_fc)):
     if ((dt_fc.iloc[ind][0:-2:2]<=dt_fc.iloc[ind][-2]).all()):
         print("The Todays DayHigh is greter than financial crisis year High "+dt_cy.index[ind],dt_cy.iloc[ind][-1])
+
+
+
+
+# 5th Objective to take daily list of top losing and gaining stocks for the last trading session.
+
+top_gainers = nse.get_top_gainers()
+top_losers = nse.get_top_losers()
+
+#Creating data frame for top_gainers & top_losers
+
+df_tg = pd.DataFrame(top_gainers).set_index('symbol')
+df_tl = pd.DataFrame(top_losers).set_index('symbol')
+
+##Lretrive nse live data for each stock as above data frames top_gainers & top_losers
+
+tg = []
+for i,r in df_tg.iterrows():
+    tgl = nse.get_quote(i)
+    tg.append(tgl) 
+  
+tl = []
+for i,r in df_tl.iterrows():
+    tll = nse.get_quote(i)
+    tl.append(tll) 
+
+# To make simple list from dictionarys used in above    
+top_g=[]
+
+for index in range(len(tg)):
+    for key in tg[index]:
+        if key == 'symbol':
+            #retrive each value
+            gs = tg[index]['symbol']
+            gdl = tg[index]['dayLow']
+            gdh = tg[index]['dayHigh']
+            gh52 = tg[index]['high52']
+            gl52 = tg[index]['low52']
+            #appended values
+            top_g.append([gs,gdl,gdh,gh52,gl52])
+
+top_l=[]
+
+for index in range(len(tl)):
+    for key in tl[index]:
+        if key == 'symbol':
+            #retrive each value
+            ls = tl[index]['symbol']
+            ldl = tl[index]['dayLow']
+            ldh = tl[index]['dayHigh']
+            lh52 = tl[index]['high52']
+            ll52 = tl[index]['low52']
+            #appended values
+            top_l.append([ls,ldl,ldh,lh52,ll52])
+
+            
+df_top_gn = pd.DataFrame(top_g,columns=['symbol','dayLow','dayHigh','high52','low52'] )        
+df_top_gn = pd.DataFrame(df_top_gn).set_index('symbol')
+
+            
+df_top_ln = pd.DataFrame(top_l,columns=['symbol','dayLow','dayHigh','high52','low52'] )        
+df_top_ln = pd.DataFrame(df_top_ln).set_index('symbol')
+
+            
+for ind in range(len(df_top_ln)):
+    if ((df_top_ln.iloc[ind][3]>=df_top_ln.iloc[ind][0]).all()):
+        print("The Todays top_losers DayLow is less than 52 week low "+df_top_ln.index[ind],df_top_ln.iloc[ind][0])
+
+for ind in range(len(df_top_gn)):
+    if ((df_top_gn.iloc[ind][2]<=df_top_gn.iloc[ind][1]).all()):
+        print("The Todays top_gainers DayHigh is greter than 52 week High "+df_top_gn.index[ind],df_top_gn.iloc[ind][1])
+
+
+
+
+
+
+
+
+
+
+
 
 
 
