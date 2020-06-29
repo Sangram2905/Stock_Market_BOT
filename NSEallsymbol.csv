@@ -1,0 +1,189 @@
+Symbol,industry,type,numbers
+BAJAJ-AUTO,Auto,N50,0
+EICHERMOT,Auto,N50,1
+HEROMOTOCO,Auto,N50,2
+M&M,Auto,N50,3
+MARUTI,Auto,N50,4
+TATAMOTORS,Auto,N50,5
+AXISBANK,Banks,N50,6
+HDFCBANK,Banks,N50,7
+ICICIBANK,Banks,N50,8
+INDUSINDBK,Banks,N50,9
+KOTAKBANK,Banks,N50,10
+SBIN,Banks,N50,11
+SHREECEM,Cement,N50,12
+ULTRACEMCO,Cement,N50,13
+UPL,Chemicals,N50,14
+LT,Construction,N50,15
+BAJAJFINSV,Finance,N50,16
+BAJFINANCE,Finance,N50,17
+HDFC,Finance,N50,18
+BRITANNIA,Food Processing,N50,19
+NESTLEIND,Food Processing,N50,20
+TITAN,Gems and Jewellery,N50,21
+INFRATEL,Infrastructure,N50,22
+JSWSTEEL,Iron and Steel,N50,23
+TATASTEEL,Iron and Steel,N50,24
+HCLTECH,IT,N50,25
+INFY,IT,N50,26
+TCS,IT,N50,27
+TECHM,IT,N50,28
+WIPRO,IT,N50,29
+HINDALCO,Metals-NonFerrous,N50,30
+COALINDIA,Mining,N50,31
+VEDL,Mining,N50,32
+ADANIPORTS,Miscellaneous,N50,33
+GRASIM,Miscellaneous,N50,34
+ASIANPAINT,Paints&Pigments,N50,35
+HINDUNILVR,Personal Care,N50,36
+BPCL,Petroleum,N50,37
+GAIL,Petroleum,N50,38
+IOC,Petroleum,N50,39
+ONGC,Petroleum,N50,40
+RELIANCE,Petroleum,N50,41
+CIPLA,Pharma and Health,N50,42
+DRREDDY,Pharma and Health,N50,43
+SUNPHARMA,Pharma and Health,N50,44
+NTPC,Power,N50,45
+POWERGRID,Power,N50,46
+ZEEL,Service,N50,47
+BHARTIARTL,Telecommuni,N50,48
+ITC,Tobacco,N50,49
+AMARAJABAT,Auto Ancillaries,NAUTO,50
+APOLLOTYRE,Tyres,NAUTO,51
+ASHOKLEY,Auto,NAUTO,52
+BAJAJ-AUTO,Auto,NAUTO,53
+BHARATFORG,Engineering,NAUTO,54
+BOSCHLTD,Auto Ancillaries,NAUTO,55
+EICHERMOT,Auto,NAUTO,56
+EXIDEIND,Auto Ancillaries,NAUTO,57
+HEROMOTOCO,Auto,NAUTO,58
+M&M,Auto,NAUTO,59
+MARUTI,Auto,NAUTO,60
+MOTHERSUMI,Auto Ancillaries,NAUTO,61
+MRF,Tyres,NAUTO,62
+TATAMOTORS,Auto,NAUTO,63
+TVSMOTOR,Auto,NAUTO,64
+AXISBANK,Banks,NBANK,65
+BANDHANBNK,Banks,NBANK,66
+FEDERALBNK,Banks,NBANK,67
+HDFCBANK,Banks,NBANK,68
+ICICIBANK,Banks,NBANK,69
+IDFCFIRSTB,Banks,NBANK,70
+INDUSINDBK,Banks,NBANK,71
+KOTAKBANK,Banks,NBANK,72
+RBLBANK,Banks,NBANK,73
+BANKBARODA,Banks,NBANK,74
+BANKINDIA,Banks,NBANK,75
+BAJAJFINSV,Finance,NBANK,76
+CANBK,Banks,NBANK,77
+CENTRALBK,Banks,NBANK,78
+INDIANB,Banks,NBANK,79
+IOB,Banks,NBANK,80
+J&KBANK,Banks,NBANK,81
+MAHABANK,Banks,NBANK,82
+PNB,Banks,NBANK,83
+CUB,Banks,NBANK,84
+PSB,Banks,NBANK,85
+SBIN,Banks,NBANK,86
+UCOBANK,Banks,NBANK,87
+UNIONBANK,Banks,NBANK,88
+BAJAJHLDNG,Finance,NBANK,89
+BAJFINANCE,Finance,NBANK,90
+CHOLAFIN,Finance,NBANK,91
+HDFC,Finance,NBANK,92
+HDFCLIFE,Finance,NBANK,93
+IBULHSGFIN,Finance,NBANK,94
+ICICIGI,Finance,NBANK,95
+ICICIPRULI,Finance,NBANK,96
+M&MFIN,Finance,NBANK,97
+PFC,Finance,NBANK,98
+RECLTD,Finance,NBANK,99
+SBILIFE,Finance,NBANK,100
+SRTRANSFIN,Finance,NBANK,101
+GICRE,Finance,NBANK,102
+NIACL,Finance,NBANK,103
+ACC,Cement,NCement,104
+AMBUJACEM,Cement,NCement,105
+DALBHARAT,Cement,NCement,106
+RAMCOCEM,Cement,NCement,107
+SHREECEM,Cement,NCement,108
+ULTRACEMCO,Cement,NCement,109
+HCLTECH,IT,NIT,110
+INFY,IT,NIT,111
+JUSTDIAL,Service,NIT,112
+MINDTREE,IT,NIT,113
+MPHASIS,IT,NIT,114
+NAUKRI,Miscellaneous,NIT,115
+NIITTECH,IT,NIT,116
+TCS,IT,NIT,117
+TECHM,IT,NIT,118
+WIPRO,IT,NIT,119
+HEXAWARE,IT,NIT,120
+ADANITRANS,Power,Npower,121
+BPCL,Petroleum,Npower,122
+GAIL,Petroleum,Npower,123
+HINDPETRO,Petroleum,Npower,124
+IOC,Petroleum,Npower,125
+NTPC,Power,Npower,126
+ONGC,Petroleum,Npower,127
+POWERGRID,Power,Npower,128
+RELIANCE,Petroleum,Npower,129
+TATAPOWER,Power,Npower,130
+OIL,Petroleum,Npower,131
+NHPC,Power,Npower,132
+ALKEM,Pharma and Health,Npharma,133
+AUROPHARMA,Pharma and Health,Npharma,134
+BIOCON,Pharma and Health,Npharma,135
+CADILAHC,Pharma and Health,Npharma,136
+CIPLA,Pharma and Health,Npharma,137
+DIVISLAB,Pharma and Health,Npharma,138
+DRREDDY,Pharma and Health,Npharma,139
+LUPIN,Pharma and Health,Npharma,140
+SUNPHARMA,Pharma and Health,Npharma,141
+TORNTPHARM,Pharma and Health,Npharma,142
+APLAPOLLO,Iron and Steel,Niorn,143
+JINDALSTEL,Iron and Steel,Niorn,144
+JSWSTEEL,Iron and Steel,Niorn,145
+RATNAMANI,Iron and Steel,Niorn,146
+SAIL,Iron and Steel,Niorn,147
+TATASTEEL,Iron and Steel,Niorn,148
+WELCORP,Iron and Steel,Niorn,149
+HINDALCO,Metals-NonFerrous,Niorn,150
+HINDCOPPER,Metals-NonFerrous,Niorn,151
+HINDZINC,Metals-NonFerrous,Niorn,152
+NATIONALUM,Metals-NonFerrous,Niorn,153
+COALINDIA,Mining,Niorn,154
+MOIL,Mining,Niorn,155
+NMDC,Mining,Niorn,156
+VEDL,Mining,Niorn,157
+BEL,Electronics,Niorn,158
+CONCOR,Transport,Niorn,159
+NATIONALUM,Metals-NonFerrous,Niorn,160
+BRITANNIA,Food Processing,NFMCG,161
+COLPAL,Personal Care,NFMCG,162
+DABUR,Personal Care,NFMCG,163
+EMAMILTD,Personal Care,NFMCG,164
+GODREJCP,Personal Care,NFMCG,165
+HINDUNILVR,Personal Care,NFMCG,166
+ITC,Tobacco,NFMCG,167
+JUBLFOOD,Food Processing,NFMCG,168
+MARICO,Personal Care,NFMCG,169
+MCDOWELL-N,Non-alcoholic Beverages,NFMCG,170
+NESTLEIND,Food Processing,NFMCG,171
+PGHH,Personal Care,NFMCG,172
+TATACONSUM,Tea / Coffee,NFMCG,173
+UBL,Non-alcoholic Beverages,NFMCG,174
+VBL,Beverages - Non-Alcoholic,NFMCG,175
+CONCOR,Construction,Nconstruction,176
+NBCC,Construction,Nconstruction,177
+NCC,Construction,Nconstruction,178
+BHEL,Engineering,Nconstruction,179
+SIEMENS,Engineering,Nconstruction,180
+GMRINFRA,Infrastructure,Nconstruction,181
+INFRATEL,Infrastructure,Nconstruction,182
+ADANIPORTS,Miscellaneous,Nconstruction,183
+ENGINERSIN,Service,Nconstruction,184
+CONCOR,Transport,Nconstruction,185
+INDIGO,Transport,Nconstruction,186
+LT,Construction,Nconstruction,187
