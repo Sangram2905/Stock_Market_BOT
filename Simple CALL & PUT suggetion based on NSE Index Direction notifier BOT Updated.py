@@ -1,91 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun 24 16:29:26 2020
+# # -*- coding: utf-8 -*-
+# """
+# Created on Wed Jun 24 16:29:26 2020
 
-@author: Sangram Phadke
-"""
-#Simple CALL & PUT suggetion based on NSE Index Direction notifier BOT
-
-######################## Creating U.S index ########################################
-
-import yfinance as yf
-
-#United states index
-sp500 = yf.Ticker("^GSPC")
-nf_sp500 = sp500.info
-nf_sp500pc = float(((nf_sp500['dayLow']-nf_sp500['previousClose'])/nf_sp500['previousClose'])*100)
-#print('US S&P 500 index is {} and persent change is {}'.format(nf_sp500['dayLow'],nf_sp500pc))
-
-dow = yf.Ticker("^DJI")
-nf_dow = dow.info
-nf_dowpc = float(((nf_dow['dayLow']-nf_dow['previousClose'])/nf_dow['previousClose'])*100)
-#print('US DOW index is {} and persent change is {}'.format(nf_dow['dayLow'],nf_dowpc))
+# @author: Sangram Phadke
+# """
 
 
-nasd = yf.Ticker("^IXIC")
-nf_nasd = nasd.info
-nf_nasdpc = float(((nf_nasd['dayLow']-nf_nasd['previousClose'])/nf_nasd['previousClose'])*100)
-#print('US Nasdaq Composite index is {} and persent change is {}'.format(nf_nasd['dayLow'],nf_nasdpc))
-
-
-#United states Sectors
-
-
-#Dow Jones U.S. Bank Index
-dowbank = yf.Ticker("^DJUSBK")
-nf_dowbank = dowbank.info
-nf_dowbankpc = float(((nf_dowbank['dayLow']-nf_dowbank['previousClose'])/nf_dowbank['previousClose'])*100)
-#print('US Bank sector index is {} and persent change is {}'.format(nf_dowbank['dayLow'],nf_dowbankpc))
-
-
-
-
-#Dow Jones U.S. IT Index
-dowit = yf.Ticker("^DJUSTC")
-nf_dowit = dowit.info
-nf_dowitpc = float(((nf_dowit['dayLow']-nf_dowit['previousClose'])/nf_dowit['previousClose'])*100)
-#print('US IT sector index is {} and persent change is {}'.format(nf_dowit['dayLow'],nf_dowitpc))
-
-
-
-
-#Dow Jones U.S. Pharma Index
-dowph = yf.Ticker("^DJUSPR")
-nf_dowph = dowph.info
-nf_dowphpc = float(((nf_dowph['dayLow']-nf_dowph['previousClose'])/nf_dowph['previousClose'])*100)
-#print('US Pharma sector index is {} and persent change is {}'.format(nf_dowph['dayLow'],nf_dowphpc))
-
-
-
-#Dow Jones U.S. Phara & bio Index
-dowpb = yf.Ticker("^DJUSPN")
-nf_dowpb = dowpb.info
-nf_dowpbpc = float(((nf_dowpb['dayLow']-nf_dowpb['previousClose'])/nf_dowpb['previousClose'])*100)
-#print('US Pharma & Biotech sector index is {} and persent change is {}'.format(nf_dowpb['dayLow'],nf_dowpbpc))
-
-
-
-
-#United states futures
-
-nqf = yf.Ticker("NQ=F")
-nf_nqf = nqf.info
-nf_nqfpc = float(((nf_nqf['dayLow']-nf_nqf['previousClose'])/nf_nqf['previousClose'])*100)
-#print('US NQ FUTURE index is {} and persent change is {}'.format(nf_nqf['dayLow'],nf_nqfpc))
-
-
-spf = yf.Ticker("ES=F")
-nf_spf = spf.info
-nf_spfpc = float(((nf_spf['dayLow']-nf_spf['previousClose'])/nf_spf['previousClose'])*100)
-#print('US S&P FUTURE index is {} and persent change is {}'.format(nf_spf['dayLow'],nf_spfpc))
-
-
-dowf = yf.Ticker("YM=F")
-nf_dowf = dowf.info
-nf_dowfpc = float(((nf_dowf['dayLow']-nf_dowf['previousClose'])/nf_dowf['previousClose'])*100)
-#print('US DOW FUTURE index is {} and persent change is {}'.format(nf_dowf['dayLow'],nf_dowfpc))
-
-
+# #Simple CALL & PUT suggetion based on NSE Index Direction notifier BOT
 
 ################################################# NSE DATA PULL start #################################################
 
@@ -94,7 +15,6 @@ nf_dowfpc = float(((nf_dowf['dayLow']-nf_dowf['previousClose'])/nf_dowf['previou
 
 # Importing the libraries
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 import datetime
 from nsetools import Nse
@@ -103,47 +23,59 @@ import os
 import sys
 
 from datetime import datetime
+print('',file=open("NSEmarket.txt", "a"))
 starttime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") #program data pull start time
+print('Start time of BOT',starttime,file=open("NSEmarket.txt", "a"))
 
 # Importing the NIFTY dataset from NSE live site / portel 
-nse = Nse() 
-# NSE object creation
+
+nse = Nse()  # NSE object creation
+
 #print (nse)
-#il = nse.get_index_list()
+
+
+#listallindex = nse.get_index_list()
 
 #NIFTY indexs current values
 
 nf_n50 = nse.get_index_quote("nifty 50") 
-#print('NIFTY 50   index current value is {} and precent change is {} '.format(n50_index['lastPrice'],n50_index['pChange'])) 
-
+print('NIFTY 50   index current value is {} and precent change is {} '.format(nf_n50['lastPrice'],nf_n50['pChange'])) 
 
 n50_200 = nse.get_index_quote("NIFTY 200") 
-#print('NIFTY 200  index current value is {} and precent change is {} '.format(n50_200['lastPrice'],n50_200['pChange'])) 
-
+print('NIFTY 200  index current value is {} and precent change is {} '.format(n50_200['lastPrice'],n50_200['pChange'])) 
 
 nf_bank = nse.get_index_quote("nifty bank") 
-#print('NIFTY BANK index current value is {} and precent change is {} '.format(nf_bank['lastPrice'],nf_bank['pChange'])) 
+print('NIFTY BANK index current value is {} and precent change is {} '.format(nf_bank['lastPrice'],nf_bank['pChange'])) 
 
 nf_psubank = nse.get_index_quote("nifty psu bank") 
-#print('NIFTY PSU BANK index current value is {} and precent change is {} '.format(nf_psubank['lastPrice'],nf_psubank['pChange'])) 
+print('NIFTY PSU BANK index current value is {} and precent change is {} '.format(nf_psubank['lastPrice'],nf_psubank['pChange'])) 
 
 nf_pvtbank = nse.get_index_quote("nifty pvt bank") 
-#print('NIFTY PVT BANK index current value is {} and precent change is {} '.format(nf_pvtbank['lastPrice'],nf_pvtbank['pChange'])) 
+print('NIFTY PVT BANK index current value is {} and precent change is {} '.format(nf_pvtbank['lastPrice'],nf_pvtbank['pChange'])) 
 
 nf_finser = nse.get_index_quote("nifty fin service") 
-#print('NIFTY Financial service index current value is {} and precent change is {} '.format(nf_finser['lastPrice'],nf_finser['pChange'])) 
+print('NIFTY Financial service index current value is {} and precent change is {} '.format(nf_finser['lastPrice'],nf_finser['pChange'])) 
 
 nf_auto = nse.get_index_quote("nifty auto") 
-#print('NIFTY Auto index current value is {} and precent change is {} '.format(nf_auto['lastPrice'],nf_auto['pChange'])) 
-
+print('NIFTY Auto index current value is {} and precent change is {} '.format(nf_auto['lastPrice'],nf_auto['pChange'])) 
 
 nf_pharma = nse.get_index_quote("nifty pharma") 
-#print('NIFTY Pharma index current value is {} and precent change is {} '.format(nf_pharma['lastPrice'],nf_pharma['pChange'])) 
-
+print('NIFTY Pharma index current value is {} and precent change is {} '.format(nf_pharma['lastPrice'],nf_pharma['pChange'])) 
 
 nf_nint = nse.get_index_quote("nifty it") 
-#print('NIFTY IT   index current value is {} and precent change is {} '.format(n50_nit['lastPrice'],n50_nit['pChange'])) 
+print('NIFTY IT   index current value is {} and precent change is {} '.format(nf_nint['lastPrice'],nf_nint['pChange'])) 
 
+nf_fmcg = nse.get_index_quote("nifty fmcg") 
+print('NIFTY fmcg   index current value is {} and precent change is {} '.format(nf_fmcg['lastPrice'],nf_fmcg['pChange'])) 
+
+nf_energy = nse.get_index_quote("nifty energy") 
+print('NIFTY Energy   index current value is {} and precent change is {} '.format(nf_energy['lastPrice'],nf_energy['pChange'])) 
+
+nf_metal= nse.get_index_quote("nifty metal") 
+print('NIFTY metal index current value is {} and precent change is {} '.format(nf_metal['lastPrice'],nf_metal['pChange'])) 
+
+nf_infra= nse.get_index_quote("nifty infra") 
+print('NIFTY Infra index current value is {} and precent change is {} '.format(nf_infra['lastPrice'],nf_infra['pChange'])) 
 
 
 #Creating data frame for NSE index stocks
@@ -181,6 +113,7 @@ for index in range(len(nis)):
     
 df_nislist = pd.DataFrame(nislist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_nislist = pd.DataFrame(df_nislist).set_index('symbol')
+df_nislist.replace({None: 0.5}, inplace=True)
 
 
 # N50 shares from NSE
@@ -201,7 +134,7 @@ for ind in range(len(df_nislist)):
         itgz = "Price change are in zeros 0 "
         n50inzero.append([itgz,df_nislist.index[ind],df_nislist.iloc[ind][3]])
 
-#print("NIFTY 50 stocks whre {} are greater than one, {} are negative , {} are in zeros".format(len(n50grtz),len(n50negt),len(n50inzero)))
+print("NIFTY 50 stocks whre {} are greater than one, {} are negative , {} are in zeros".format(len(n50grtz),len(n50negt),len(n50inzero)))
 
 
 ########################## NBANK ##########################################
@@ -232,6 +165,7 @@ for index in range(len(bank)):
     
 df_banklist = pd.DataFrame(banklist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_banklist = pd.DataFrame(df_banklist).set_index('symbol')
+df_banklist.replace({None: 0.5}, inplace=True)
 
 
 # Nbank shares from NSE
@@ -285,7 +219,7 @@ for index in range(len(auto)):
     
 df_autolist = pd.DataFrame(autolist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_autolist = pd.DataFrame(df_autolist).set_index('symbol')
-
+df_autolist.replace({None: 0.5}, inplace=True)
 
 # NAUTO shares from NSE
 
@@ -335,7 +269,7 @@ for index in range(len(cement)):
     
 df_cementlist = pd.DataFrame(cementlist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_cementlist = pd.DataFrame(df_cementlist).set_index('symbol')
-
+df_cementlist.replace({None: 0.5}, inplace=True)
 
 # Ncement shares from NSE
 
@@ -386,7 +320,7 @@ for index in range(len(nint)):
     
 df_nintlist = pd.DataFrame(nintlist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_nintlist = pd.DataFrame(df_nintlist).set_index('symbol')
-
+df_nintlist.replace({None: 0.5}, inplace=True)
 
 # Nnint shares from NSE
 
@@ -436,7 +370,7 @@ for index in range(len(power)):
     
 df_powerlist = pd.DataFrame(powerlist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_powerlist = pd.DataFrame(df_powerlist).set_index('symbol')
-
+df_powerlist.replace({None: 0.5}, inplace=True)
 
 # Npower shares from NSE
 
@@ -487,7 +421,7 @@ for index in range(len(pharma)):
     
 df_pharmalist = pd.DataFrame(pharmalist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_pharmalist = pd.DataFrame(df_pharmalist).set_index('symbol')
-
+df_pharmalist.replace({None: 0.5}, inplace=True)
 
 # Npharma shares from NSE
 
@@ -539,7 +473,7 @@ for index in range(len(niorn)):
     
 df_niornlist = pd.DataFrame(niornlist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_niornlist = pd.DataFrame(df_niornlist).set_index('symbol')
-
+df_niornlist.replace({None: 0.5}, inplace=True)
 
 # Nniorn shares from NSE
 
@@ -594,7 +528,7 @@ for index in range(len(fmcg)):
     
 df_fmcglist = pd.DataFrame(fmcglist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_fmcglist = pd.DataFrame(df_fmcglist).set_index('symbol')
-
+df_fmcglist.replace({None: 0.5}, inplace=True)
 
 # Nfmcg shares from NSE
 
@@ -649,7 +583,7 @@ for index in range(len(cost)):
     
 df_costlist = pd.DataFrame(costlist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
 df_costlist = pd.DataFrame(df_costlist).set_index('symbol')
-
+df_costlist.replace({None: 0.5}, inplace=True)
 
 # Ncost shares from NSE
 
@@ -671,7 +605,7 @@ for ind in range(len(df_costlist)):
 
 #print("NSE cost stocks whre {} are greater than one, {} are negative , {} are in zeros".format(len(costgrtz),len(costnegt),len(costinzero)))
 
-
+print('End of data pull from NSE')
 
 #####################################  End of dat pull from NSE  ###############################
 
@@ -681,55 +615,19 @@ endtime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") #program data pull end ti
 
 
 ################################ Print statments #################################################
-# #Sectors
-# print("NIFTY 50    stocks where {} are greater than one {} are negative {} are in zeros".format(len(n50grtz),len(n50negt),len(n50inzero)))
-# print("NSE AUTO    stocks where {} are greater than one {} are negative {} are in zeros".format(len(autogrtz),len(autonegt),len(autoinzero)))
-# print("NSE Bank    stocks where {} are greater than one {} are negative {} are in zeros".format(len(bankgrtz),len(banknegt),len(bankinzero)))
-# print("NSE cement  stocks where {} are greater than one {} are negative {} are in zeros".format(len(cementgrtz),len(cementnegt),len(cementinzero)))
-# print("NSE IT      stocks where {} are greater than one {} are negative {} are in zeros".format(len(nintgrtz),len(nintnegt),len(nintinzero)))
-# print("NSE Power   stocks where {} are greater than one {} are negative {} are in zeros".format(len(powergrtz),len(powernegt),len(powerinzero)))
-# print("NSE Pharma  stocks where {} are greater than one {} are negative {} are in zeros".format(len(pharmagrtz),len(pharmanegt),len(pharmainzero)))
-# print("NSE Iorn    stocks where {} are greater than one {} are negative {} are in zeros".format(len(niorngrtz),len(niornnegt),len(niorninzero)))
-# print("NSE FMCG    stocks where {} are greater than one {} are negative {} are in zeros".format(len(fmcggrtz),len(fmcgnegt),len(fmcginzero)))
-# print("NSE Costconstruction stk {} are greater than one {} are negative {} are in zeros".format(len(costgrtz),len(costnegt),len(costinzero)))
-
-
-
-##Index
-
-# print('NIFTY 50   index current value is {} and precent change is {} '.format(nf_n50['lastPrice'],nf_n50['pChange'])) 
-
-# print('NIFTY BANK index current value is {} and precent change is {} '.format(nf_bank['lastPrice'],nf_bank['pChange'])) 
-# print('NIFTY PSU BANK index currentvalue {} and precent change is {} '.format(nf_psubank['lastPrice'],nf_psubank['pChange'])) 
-# print('NIFTY PVT BANK index currentvalue {} and precent change is {} '.format(nf_pvtbank['lastPrice'],nf_pvtbank['pChange'])) 
-# print('NIFTY Financial service idx value {} and precent change is {} '.format(nf_finser['lastPrice'],nf_finser['pChange'])) 
-
-# print('NIFTY Auto index current value is {} and precent change is {} '.format(nf_auto['lastPrice'],nf_auto['pChange'])) 
-# print('NIFTY Pharma idx current value is {} and precent change is {} '.format(nf_pharma['lastPrice'],nf_pharma['pChange'])) 
-# print('NIFTY IT   index current value is {} and precent change is {} '.format(nf_nint['lastPrice'],nf_nint['pChange'])) 
-# print('NIFTY 200  index current value is {} and precent change is {} '.format(n50_200['lastPrice'],n50_200['pChange'])) 
-
-
-################################### US analysis ###########################################
-
-## Index
-
-# print('US Nasdaq Composite index is {} and persent change is {}'.format(nf_nasd['dayLow'],nf_nasdpc))
-# print('US DOW index is {} and persent change is {}'.format(nf_dow['dayLow'],nf_dowpc))
-# print('US S&P 500 index is {} and persent change is {}'.format(nf_sp500['dayLow'],nf_sp500pc))
-
-## Sectors
-
-# print('US Pharma & Biotech sector index is {} and persent change is {}'.format(nf_dowpb['dayLow'],nf_dowpbpc))
-# print('US Pharma sector index is {} and persent change is {}'.format(nf_dowph['dayLow'],nf_dowphpc))
-# print('US IT sector index is {} and persent change is {}'.format(nf_dowit['dayLow'],nf_dowitpc))
-# print('US Bank sector index is {} and persent change is {}'.format(nf_dowbank['dayLow'],nf_dowbankpc))
-
-## Futures
-
-# print('US DOW FUTURE index is {} and persent change is {}'.format(nf_dowf['dayLow'],nf_dowfpc))
-# print('US S&P FUTURE index is {} and persent change is {}'.format(nf_spf['dayLow'],nf_spfpc))
-# print('US NQ FUTURE index is {} and persent change is {}'.format(nf_nqf['dayLow'],nf_nqfpc))
+#Sectors
+print('')
+print("NIFTY 50    stocks where {} are greater than one {} are negative {} are in zeros".format(len(n50grtz),len(n50negt),len(n50inzero)))
+print("NSE AUTO    stocks where {} are greater than one {} are negative {} are in zeros".format(len(autogrtz),len(autonegt),len(autoinzero)))
+print("NSE Bank    stocks where {} are greater than one {} are negative {} are in zeros".format(len(bankgrtz),len(banknegt),len(bankinzero)))
+print("NSE cement  stocks where {} are greater than one {} are negative {} are in zeros".format(len(cementgrtz),len(cementnegt),len(cementinzero)))
+print("NSE IT      stocks where {} are greater than one {} are negative {} are in zeros".format(len(nintgrtz),len(nintnegt),len(nintinzero)))
+print("NSE Power   stocks where {} are greater than one {} are negative {} are in zeros".format(len(powergrtz),len(powernegt),len(powerinzero)))
+print("NSE Pharma  stocks where {} are greater than one {} are negative {} are in zeros".format(len(pharmagrtz),len(pharmanegt),len(pharmainzero)))
+print("NSE Iorn    stocks where {} are greater than one {} are negative {} are in zeros".format(len(niorngrtz),len(niornnegt),len(niorninzero)))
+print("NSE FMCG    stocks where {} are greater than one {} are negative {} are in zeros".format(len(fmcggrtz),len(fmcgnegt),len(fmcginzero)))
+print("NSE Costconstruction stk {} are greater than one {} are negative {} are in zeros".format(len(costgrtz),len(costnegt),len(costinzero)))
+print('')
 
 
 ######################################  Main Logic ##########################################
@@ -749,75 +647,72 @@ endtime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") #program data pull end ti
    
 
 if (len(autonegt) < 2 and len(banknegt) < 8 and len(cementnegt) < 1 and len(costnegt) < 1 and len(fmcgnegt) < 2 and len(niornnegt) < 2 and len(nintnegt) < 2 and len(pharmanegt) < 1 and len(powernegt) < 2):
-    print('the sectors are up, NIFTY 50 is up')
+    print('The sectors are up at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
 else:
-    print('One or more sectors are down, NIFTY 50 is down')
+    print('One or more sectors are down at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     if (len(autonegt) > 0 and len(banknegt) > 0 and len(cementnegt) > 0 and len(costnegt) > 0 and len(fmcgnegt) > 0 and len(niornnegt) > 0 and len(nintnegt) > 0 and len(pharmanegt) > 0 and len(powernegt) >0 ):
-        print('All sectors are down by avrage {} percent'.format(((len(autonegt) + len(banknegt) + len(cementnegt) + len(costnegt) + len(fmcgnegt) + len(niornnegt) + len(nintnegt) + len(pharmanegt) + len(powernegt))/137)*100))
+        print('All sectors are down by avrage {} percent'.format(((len(autonegt) + len(banknegt) + len(cementnegt) + len(costnegt) + len(fmcgnegt) + len(niornnegt) + len(nintnegt) + len(pharmanegt) + len(powernegt))/137)*100),file=open("NSEmarket.txt", "a"))
+    else:
+        print('Read full details follows',file=open("NSEmarket.txt", "a"))
+
 
 if len(autonegt) > 0 :
     # Auto
-    print ('Auto sector is {} down'.format((len(autonegt)/15)*100))
+    print ('Auto sector is {} down'.format((len(autonegt)/15)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('Auto sector is up')
+    print ('Auto sector is up',file=open("NSEmarket.txt", "a"))
 
 
-if float(nf_dowbankpc)<0.0:
-    if len(banknegt) > 0 :
-        print ('Bank sector is {} down'.format((len(banknegt)/38)*100))
-        print('US Bank sector index is {} and persent change is {}'.format(nf_dowbank['dayLow'],nf_dowbankpc))
+if len(banknegt) > 0 :
+    print ('Bank sector is {} down'.format((len(banknegt)/38)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('Bank sector is up')
+    print ('Bank sector is up',file=open("NSEmarket.txt", "a"))
 
 
-if nf_dowitpc < 0.0:
-    if len(nintnegt) > 0 :
-        print ('IT sector is {} down'.format((len(nintnegt)/11)*100))
-        print('US IT sector index is {} and persent change is {}'.format(nf_dowit['dayLow'],nf_dowitpc))
+if len(nintnegt) > 0 :
+    print ('IT sector is {} down'.format((len(nintnegt)/11)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('IT sector is up')
+    print ('IT sector is up',file=open("NSEmarket.txt", "a"))
 
 
 if len(cementnegt) > 0 :
     # Cement
-    print ('Cement sector is {} down'.format((len(cementnegt)/6)*100))
+    print ('Cement sector is {} down'.format((len(cementnegt)/6)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('Cement sector is up')
+    print ('Cement sector is up',file=open("NSEmarket.txt", "a"))
 
 
 if len(costnegt) > 0 :
     # Construction
-    print ('Construction sector is {} down'.format((len(costnegt)/12)*100))
+    print ('Construction sector is {} down'.format((len(costnegt)/12)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('Construction sector is up')
+    print ('Construction sector is up',file=open("NSEmarket.txt", "a"))
 
 if len(fmcgnegt) > 0 :
     # FMCG
-    print ('FMCG sector is {} down'.format((len(fmcgnegt)/15)*100))
+    print ('FMCG sector is {} down'.format((len(fmcgnegt)/15)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('FMCG sector is up')
+    print ('FMCG sector is up',file=open("NSEmarket.txt", "a"))
 
 if len(niornnegt) > 0 :
     # Iorn
-    print ('Iorn sector is {} down'.format((len(niornnegt)/18)*100))
+    print ('Iorn sector is {} down'.format((len(niornnegt)/18)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('Iorn sector is up')
+    print ('Iorn sector is up',file=open("NSEmarket.txt", "a"))
 
  
 if len(pharmanegt) > 0 :
     # Pharma 
-    print ('Pharma sector is {} down'.format((len(pharmanegt)/10)*100))
-    print('US Pharma & Biotech sector index is {} and persent change is {}'.format(nf_dowpb['dayLow'],nf_dowpbpc))
-    print('US Pharma sector index is {} and persent change is {}'.format(nf_dowph['dayLow'],nf_dowphpc))
+    print ('Pharma sector is {} down'.format((len(pharmanegt)/10)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('Pharma sector is up')
+    print ('Pharma sector is up',file=open("NSEmarket.txt", "a"))
   
 
 if len(powernegt) > 0:
     # Power
-    print ('Power sector is {} down'.format((len(powernegt)/12)*100))
+    print ('Power sector is {} down'.format((len(powernegt)/12)*100),file=open("NSEmarket.txt", "a"))
 else:
-    print ('Power sector is up')
+    print ('Power sector is up',file=open("NSEmarket.txt", "a"))
     
 
 ###################### IT sector Options ################################# 
@@ -829,46 +724,60 @@ nint_len = len(nintgrtz)+len(nintnegt)+len(nintinzero)
 if (float(nf_nint['pChange']) <= 0.01) and (float(nf_nint['pChange']) >= -0.75):
     if len(nintnegt) >= (nint_len*0.7) :
         #print('Total negative are more than 70%')
-        print('For IT sector BUY PUT at time {}'.format(endtime))
+        print('For IT sector BUY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         
     else:
-        print('Do not BUY IT sector PUT at time {}'.format(endtime))
-        print('High Risk For IT sector BUY Call at time {}'.format(endtime))
+        print('Do not BUY IT sector PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('High Risk For IT sector BUY Call at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     
 
 #nint PUT SELL Logic
-if float(nf_nint['pChange']) <= -0.75:
+if float(nf_nint['pChange']) < -0.75:
     if (len(nintnegt) >= (nint_len*0.4)) and (len(nintnegt) <= (nint_len*0.7)) :
         #print('Total negative are more than 70%')
-        print('For IT sector SELL PUT at time {}'.format(endtime))
+        print('For IT sector SELL PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL IT sector PUT at time {}'.format(endtime))     
-        print('Medium Risk For IT sector CALL')        
+        print('Do not SELL IT sector PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))     
+        print('Medium Risk For IT sector CALL',file=open("NSEmarket.txt", "a"))        
     
 #nint CALL BUY Logic  ##working correctly 
         
-if float(nf_nint['pChange']) >= 0.20:
-    if len(nintnegt) <= (nint_len*0.2) :
+if float(nf_nint['pChange']) >= 0.01 and float(nf_nint['pChange']) < 0.75:
+    if len(nintnegt) <= (nint_len*0.3) :
         #print('Total negative are less than 20%')
-        print('For IT sector BUY CALL at time {}'.format(endtime))
+        print('For IT sector BUY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not BUY IT sector CALL at time {}'.format(endtime))
-        print('High risk For IT sector BUY PUT' )
+        print('Do not BUY IT sector CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('High risk For IT sector BUY PUT',file=open("NSEmarket.txt", "a"))
               
 #nint CALL SELL Logic
 
         
 if float(nf_nint['pChange']) >= 0.75:
     if len(nintnegt) <= (nint_len*0.4) :
-        #print('Total negative are less than 20%')
-        print('For IT sector SELL CALL time {}'.format(endtime))
+        #print('Total negative are less than 20%',file=open("NSEmarket.txt", "a"))
+        print('For IT sector SELL CALL time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL IT sector CALL at time {}'.format(endtime))
-        print('Medium Risk For IT sector BUY PUT ')
+        print('Do not SELL IT sector CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk For IT sector BUY PUT ',file=open("NSEmarket.txt", "a"))
     
 
    
 ###################### N50 Options #################################
+
+"""
+# NIFTY sector indexs persent chages 
+nseindexs = float(nf_auto['pChange'])+(float(nf_psubank['pChange']) + float(nf_pvtbank['pChange'])+float(nf_finser['pChange']))+float(nf_infra['pChange'])+float(nf_fmcg['pChange'])+float(nf_metal['pChange'])+float(nf_nint['pChange'])+float(nf_pharma['pChange'])+float(nf_energy['pChange'])  
+
+sub divided according to sector contrigution in NIFTY 50  : 0.12+0.2+0.14+0.08+0.12+0.12+0.08+0.14
+  
+nseindexs = (float(nf_auto['pChange'])*0.12)+(float(nf_psubank['pChange']) + float(nf_pvtbank['pChange'])+float(nf_finser['pChange']))*0.2+float(nf_infra['pChange'])*0.14+float(nf_fmcg['pChange'])*0.08+float(nf_metal['pChange'])*0.12+float(nf_nint['pChange'])*0.12+float(nf_pharma['pChange'])*0.08+float(nf_energy['pChange'])*0.14  
+
+"""
+
+nseindexs = (float(nf_auto['pChange'])*0.12)+(float(nf_psubank['pChange']) + float(nf_pvtbank['pChange'])+float(nf_finser['pChange']))*0.2+float(nf_infra['pChange'])*0.14+float(nf_fmcg['pChange'])*0.08+float(nf_metal['pChange'])*0.12+float(nf_nint['pChange'])*0.12+float(nf_pharma['pChange'])*0.08+float(nf_energy['pChange'])*0.14  
+
+print ('NIFTY 50 index {} and NIFTY Sector index is {}'.format(nf_n50['pChange'],nseindexs),file=open("NSEmarket.txt", "a"))
 
 n50_len = len(n50grtz)+len(n50negt)+len(n50inzero)
 
@@ -879,38 +788,38 @@ if float(nf_n50['pChange']) <= 0.01 and float(nf_n50['pChange']) > -0.75:
         n50PEITM = (nf_n50['lastPrice']+200) 
         n50PEATM = (nf_n50['lastPrice'])
         n50PEOTM = (nf_n50['lastPrice']-200)
-        print('For NIFTY 50 BUY PUT range are {} ATM {} ITM {} OTM at time {}'.format(n50PEATM,n50PEITM,n50PEOTM,endtime))
+        print('For NIFTY 50 BUY PUT range are {} ATM {} ITM {} OTM at time {}'.format(n50PEATM,n50PEITM,n50PEOTM,endtime),file=open("NSEmarket.txt", "a"))
         
     else:
-        print('Do not BUY NIFTY 50 PUT at time {}'.format(endtime))
-        print('High Risk For NIFTY 50 BUY Call')
+        print('Do not BUY NIFTY 50 PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('High Risk For NIFTY 50 BUY Call',file=open("NSEmarket.txt", "a"))
     
 
 #n50 PUT SELL Logic
-if float(nf_n50['pChange']) <= -0.75:
+if float(nf_n50['pChange']) <= -0.75 and float(nseindexs) < 0.0:
     if (len(n50negt) >= (n50_len*0.4)) and (len(n50negt) <= (n50_len*0.7)) :
         #print('Total negative are more than 70%')
         n50PEITM = (nf_n50['lastPrice']+200) 
         n50PEATM = (nf_n50['lastPrice'])
         n50PEOTM = (nf_n50['lastPrice']-200)
-        print('For NIFTY 50 SELL PUT range are {} ATM {} ITM {} OTM at time {}'.format(n50PEATM,n50PEITM,n50PEOTM,endtime))
+        print('For NIFTY 50 SELL PUT range are {} ATM {} ITM {} OTM at time {}'.format(n50PEATM,n50PEITM,n50PEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL NIFTY 50  PUT at time {}'.format(endtime))     
-        print('Medium Risk For NIFTY BUY CALL')
+        print('Do not SELL NIFTY 50  PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))     
+        print('Medium Risk For NIFTY BUY CALL',file=open("NSEmarket.txt", "a"))
         
     
 #n50 CALL BUY Logic  ##working correctly 
         
-if float(nf_n50['pChange']) >= 0.2:
-    if len(n50negt) <= (n50_len*0.2) :
-        #print('Total negative are less than 20%')
+if float(nf_n50['pChange']) >= 0.01 and float(nf_n50['pChange']) < 1 and float(nseindexs) > 0.0:
+    if len(n50negt) <= (n50_len*0.30) :
+        #print('Total negative are less than 30%')
         n50CEITM = (nf_n50['lastPrice']-200) 
         n50CEATM = (nf_n50['lastPrice'])
         n50CEOTM = (nf_n50['lastPrice']+200)
-        print('For NIFTY 50 BUY CALL range are {} ATM {} ITM {} OTM at time {}'.format(n50CEATM,n50CEITM,n50CEOTM,endtime))
+        print('For NIFTY 50 BUY CALL range are {} ATM {} ITM {} OTM at time {}'.format(n50CEATM,n50CEITM,n50CEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not BUY NIFTY 50  CALL at time {}'.format(endtime))
-        print('High risk For NIFTY 50 BUY PUT' )
+        print('Medium Risk to buy NIFTY 50  CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('High risk For NIFTY 50 BUY PUT',file=open("NSEmarket.txt", "a") )
               
 #n50 CALL SELL Logic
 
@@ -921,48 +830,51 @@ if float(nf_n50['pChange']) >= 1:
         n50CEITM = (nf_n50['lastPrice']-200) 
         n50CEATM = (nf_n50['lastPrice'])
         n50CEOTM = (nf_n50['lastPrice']+200)
-        print('For NIFTY SELL CALL range are {} ATM {} ITM {} OTM at time {}'.format(n50CEATM,n50CEITM,n50CEOTM,endtime))
+        print('For NIFTY SELL CALL range are {} ATM {} ITM {} OTM at time {}'.format(n50CEATM,n50CEITM,n50CEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL NIFTY 50 CALL at time {}'.format(endtime))
-        print('Medium Risk For NIFTY 50 BUY PUT ')
+        print('Do not SELL NIFTY 50 CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk For NIFTY 50 BUY PUT ',file=open("NSEmarket.txt", "a"))
     
 
     
 ######################## NBANK Options ###################################
 
 bank_len = (len(bankgrtz)+len(banknegt)+len(bankinzero))
+bnseindexs = (float(nf_psubank['pChange']) * 0.25 + float(nf_pvtbank['pChange']) * 0.74 + float(nf_finser['pChange'])*0.01)
+
+print ('BANK NIFTY index {} and BANKIFTY Sector index is {}'.format(nf_bank['pChange'],bnseindexs),file=open("NSEmarket.txt", "a"))
 
 #For future prediction depend on NIFTY PSU Bank & PVT Bank Indexs    
 
 if float(nf_psubank['pChange']) > 0.25 and float(nf_pvtbank['pChange']) > 0.75 and float(nf_finser['pChange']) > 0.0:
-    print('Bank sector are in positive at time {}'.format(endtime))
+    print('Bank sector are in positive at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     if len(banknegt) > (bank_len*0.2):
-        print('NSE Bank sector is going Down but trend is positive')
+        print('NSE Bank sector is going Down but trend is positive',file=open("NSEmarket.txt", "a"))
     else:
-        print('Bank sector are in positive at time {}'.format(endtime))
+        print('Bank sector are in positive at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
 elif float(nf_psubank['pChange']) < 0.25 and float(nf_pvtbank['pChange']) < 0.75 and float(nf_finser['pChange']) < 0.0:
-    print('Bank sector are in negative at time {}'.format(endtime))
+    print('Bank sector are in negative at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     if (len(banknegt) > (bank_len*0.4)) and (len(banknegt) < (bank_len*0.70)):
-        print('NSE Bank sector is going Down and trend is negative at time {}'.format(endtime))
+        print('NSE Bank sector is going Down and trend is negative at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     if len(banknegt) > (bank_len*0.70):
-        print('NSE Bank sector is going Down and trend is highly negative at time {}'.format(endtime))
+        print('NSE Bank sector is going Down and trend is highly negative at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Bank sector are in positive and trend is negative at time {}'.format(endtime))
+        print('Bank sector are in positive and trend is negative at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
 else:
-    print('Bank sector is sideways at time {}'.format(endtime))
+    print('Bank sector is sideways at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
 
 
 #BANK PUT BUY Logic depend on NIFTY Bank Index
 if (float(nf_bank['pChange']) > -1) and (float(nf_bank['pChange']) <= 0.01):
-    if len(banknegt) >= (bank_len*0.7) :
-        #print('Total negative are more than 70%')
+    if len(banknegt) >= (bank_len*0.55) :
+        #print('Total negative are more than 55%')
         bankPEITM = (nf_bank['lastPrice']+500) 
         bankPEATM = (nf_bank['lastPrice'])
         bankPEOTM = (nf_bank['lastPrice']-500)
-        print('For BANK NIFTY BUY PUT range are {} ATM {} ITM {} OTM at time {}'.format(bankPEATM,bankPEITM,bankPEOTM,endtime))
+        print('For BANK NIFTY BUY PUT range are {} ATM {} ITM {} OTM at time {}'.format(bankPEATM,bankPEITM,bankPEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not BUY BANKNIFTY PUT at time {}'.format(endtime))
-        print('High Risk For BANK NIFTY BUY CALL ')
+        print('Do not BUY BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('High Risk For BANK NIFTY BUY CALL',file=open("NSEmarket.txt", "a"))
         
 
 #Bank PUT SELL Logic depend on NIFTY Bank Index
@@ -972,38 +884,37 @@ if float(nf_bank['pChange']) <= -1:
         bankPEITM = (nf_bank['lastPrice']+100) 
         bankPEATM = (nf_bank['lastPrice'])
         bankPEOTM = (nf_bank['lastPrice']-100)
-        print('For BANK NIFTY SELL PUT range are {} ATM {} ITM {} OTM at time {}'.format(bankPEATM,bankPEITM,bankPEOTM,endtime))
+        print('For BANK NIFTY SELL PUT range are {} ATM {} ITM {} OTM at time {}'.format(bankPEATM,bankPEITM,bankPEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL BANKNIFTY  PUT at time {}'.format(endtime))
-        print('Medium Risk For BANK NIFTY buy CALL')
+        print('Do not SELL BANKNIFTY  PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk For BANK NIFTY buy CALL',file=open("NSEmarket.txt", "a"))
 
 #Bank CALL BUY Logic depend on NIFTY Bank Index
         
-if (float(nf_bank['pChange']) >= 0.1) and (float(nf_bank['pChange']) < 1):
-    if len(banknegt) <= (bank_len*0.2) :
+if (float(nf_bank['pChange']) >= 0.01) and (float(nf_bank['pChange']) < 1):
+    if len(banknegt) <= (bank_len*0.3) :
         #print('Total negative are less than 20%')
         bankCEITM = (nf_bank['lastPrice']-100) 
         bankCEATM = (nf_bank['lastPrice'])
         bankCEOTM = (nf_bank['lastPrice']+100)
-        print('For BANK NIFTY BUY CALL range are {} ATM {} ITM {} OTM at time {}'.format(bankCEATM,bankCEITM,bankCEOTM,endtime))
+        print('For BANK NIFTY BUY CALL range are {} ATM {} ITM {} OTM at time {}'.format(bankCEATM,bankCEITM,bankCEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not BUY BANKNIFTY CALL at time {}'.format(endtime))
-        print('Medium Risk For BANK NIFTY BUY PUT')
-
+        print('Do not BUY BANKNIFTY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk For BANK NIFTY BUY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
 #Bank CALL SELL Logic depend on NIFTY Bank Index
         
 if float(nf_bank['pChange']) >= 1:
-    if len(banknegt) <= (bank_len*0.4) :
+    if len(banknegt) <= (bank_len*0.5) :
         #print('Total negative are less than 40%')
         bankCEITM = (nf_bank['lastPrice']-50) 
         bankCEATM = (nf_bank['lastPrice'])
         bankCEOTM = (nf_bank['lastPrice']+50)
-        print('For BANK NIFTY SELL CALL range are {} ATM {} ITM {} OTM at time {}'.format(bankCEATM,bankCEITM,bankCEOTM,endtime))
+        print('For BANK NIFTY SELL CALL range are {} ATM {} ITM {} OTM at time {}'.format(bankCEATM,bankCEITM,bankCEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL BANKNIFTY CALL at time {}'.format(endtime))
-        print('High Risk For BANK NIFTY BUY PUT')
+        print('Do not SELL BANKNIFTY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('High Risk For BANK NIFTY BUY PUT',file=open("NSEmarket.txt", "a"))
 
 ################################### End of BOT ############################################
-print('')
-print('')
+print('End Time of BOT',endtime,file=open("NSEmarket.txt", "a"))
+print('',file=open("NSEmarket.txt", "a"))
 print('End of BOT')
