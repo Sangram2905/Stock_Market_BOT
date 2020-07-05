@@ -1,4 +1,6 @@
-# Stock_Market_BOT
+# Stock_Market_BOT 
+## Disclaimer: Not financial advice, just an programing skill demo. ##
+
 The repository contents Stock Market BOTs for different Trading ideas 
 The BOT’s are as follows :
 1] Simple Index (NIFTY,BSE,NSE) Direction prediction BOT
