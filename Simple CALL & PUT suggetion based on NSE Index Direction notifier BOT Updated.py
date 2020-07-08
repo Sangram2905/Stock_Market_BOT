@@ -895,7 +895,7 @@ if float(nf_n50['pChange']) <= 0.01 and float(nf_n50['pChange']) > -0.75:
         print('For NIFTY 50 BUY PUT range are {} ATM {} ITM {} OTM at time {}'.format(n50PEATM,n50PEITM,n50PEOTM,endtime),file=open("NSEmarket.txt", "a"))
         
     else:
-        print('Do not BUY NIFTY 50 PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to BUY NIFTY 50 PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('High Risk For NIFTY 50 BUY Call',file=open("NSEmarket.txt", "a"))
     
 
@@ -908,7 +908,7 @@ if float(nf_n50['pChange']) <= -0.75 and float(nseindexs) < 0.0:
         n50PEOTM = ndn
         print('For NIFTY 50 SELL PUT range are {} ATM {} ITM {} OTM at time {}'.format(n50PEATM,n50PEITM,n50PEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL NIFTY 50  PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))     
+        print('Medium Risk to SELL NIFTY 50  PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))     
         print('Medium Risk For NIFTY BUY CALL',file=open("NSEmarket.txt", "a"))
         
     
@@ -936,7 +936,7 @@ if float(nf_n50['pChange']) >= 1:
         n50CEOTM = (ndp)
         print('For NIFTY SELL CALL range are {} ATM {} ITM {} OTM at time {}'.format(n50CEATM,n50CEITM,n50CEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL NIFTY 50 CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to NIFTY 50 CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('Medium Risk For NIFTY 50 BUY PUT ',file=open("NSEmarket.txt", "a"))
     
 
@@ -977,7 +977,7 @@ if (float(nf_bank['pChange']) > -1) and (float(nf_bank['pChange']) <= 0.01):
         bankPEOTM = (nf_bank['lastPrice']-500)
         print('For BANK NIFTY BUY PUT range are {} ATM {} ITM {} OTM at time {}'.format(bankPEATM,bankPEITM,bankPEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not BUY BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to BUY BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('High Risk For BANK NIFTY BUY CALL',file=open("NSEmarket.txt", "a"))
         
 
@@ -990,7 +990,7 @@ if float(nf_bank['pChange']) <= -1:
         bankPEOTM = (nf_bank['lastPrice']-100)
         print('For BANK NIFTY SELL PUT range are {} ATM {} ITM {} OTM at time {}'.format(bankPEATM,bankPEITM,bankPEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL BANKNIFTY  PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to BUY BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('Medium Risk For BANK NIFTY buy CALL',file=open("NSEmarket.txt", "a"))
 
 #Bank CALL BUY Logic depend on NIFTY Bank Index
@@ -1003,8 +1003,8 @@ if (float(nf_bank['pChange']) >= 0.01) and (float(nf_bank['pChange']) < 1):
         bankCEOTM = (nf_bank['lastPrice']+100)
         print('For BANK NIFTY BUY CALL range are {} ATM {} ITM {} OTM at time {}'.format(bankCEATM,bankCEITM,bankCEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not BUY BANKNIFTY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
-        print('Medium Risk For BANK NIFTY BUY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to Buy BANKNIFTY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk For BANKNIFTY BUY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
 #Bank CALL SELL Logic depend on NIFTY Bank Index
         
 if float(nf_bank['pChange']) >= 1:
@@ -1015,8 +1015,8 @@ if float(nf_bank['pChange']) >= 1:
         bankCEOTM = (nf_bank['lastPrice']+50)
         print('For BANK NIFTY SELL CALL range are {} ATM {} ITM {} OTM at time {}'.format(bankCEATM,bankCEITM,bankCEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL BANKNIFTY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
-        print('High Risk For BANK NIFTY BUY PUT',file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to SELL BANKNIFTY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('High Risk For BANKNIFTY BUY PUT',file=open("NSEmarket.txt", "a"))
 
 ################################### End of BOT ############################################
 print('End Time of BOT',endtime,file=open("NSEmarket.txt", "a"))
