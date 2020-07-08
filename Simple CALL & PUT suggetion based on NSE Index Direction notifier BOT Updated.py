@@ -695,7 +695,7 @@ if float(nf_indiavix['lastPrice']) < (15.811+vixmpc) and float(nf_indiavix['last
 vixdpc = (float(nf_indiavix['lastPrice'])/7) 
 ndp = nf_n50['lastPrice']+vixdpc
 ndn = nf_n50['lastPrice']-vixdpc
-print("At this time Aprox NIFTY High is {} and low is {} ".format(ndp,ndn),file=open("NSEmarket.txt", "a"))
+#print("At this time Aprox NIFTY High is {} and low is {} ".format(ndp,ndn),file=open("NSEmarket.txt", "a"))
 
 
 # Advances Declines
