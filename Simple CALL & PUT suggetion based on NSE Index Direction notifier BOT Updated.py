@@ -831,7 +831,7 @@ if (float(nf_nint['pChange']) <= 0.01) and (float(nf_nint['pChange']) >= -0.75):
         print('For IT sector BUY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         
     else:
-        print('Do not BUY IT sector PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk BUY IT sector PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('High Risk For IT sector BUY Call at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     
 
@@ -841,7 +841,7 @@ if float(nf_nint['pChange']) < -0.75:
         #print('Total negative are more than 70%')
         print('For IT sector SELL PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL IT sector PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))     
+        print('Medium Risk SELL IT sector PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))     
         print('Medium Risk For IT sector CALL',file=open("NSEmarket.txt", "a"))        
     
 #nint CALL BUY Logic  ##working correctly 
@@ -851,7 +851,7 @@ if float(nf_nint['pChange']) >= 0.01 and float(nf_nint['pChange']) < 0.75:
         #print('Total negative are less than 20%')
         print('For IT sector BUY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not BUY IT sector CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk BUY IT sector CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('High risk For IT sector BUY PUT',file=open("NSEmarket.txt", "a"))
               
 #nint CALL SELL Logic
@@ -862,7 +862,7 @@ if float(nf_nint['pChange']) >= 0.75:
         #print('Total negative are less than 20%',file=open("NSEmarket.txt", "a"))
         print('For IT sector SELL CALL time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Do not SELL IT sector CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk SELL IT sector CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('Medium Risk For IT sector BUY PUT ',file=open("NSEmarket.txt", "a"))
     
 
@@ -936,7 +936,7 @@ if float(nf_n50['pChange']) >= 1:
         n50CEOTM = (ndp)
         print('For NIFTY SELL CALL range are {} ATM {} ITM {} OTM at time {}'.format(n50CEATM,n50CEITM,n50CEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Medium Risk to NIFTY 50 CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to sell NIFTY 50 CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('Medium Risk For NIFTY 50 BUY PUT ',file=open("NSEmarket.txt", "a"))
     
 
@@ -990,7 +990,7 @@ if float(nf_bank['pChange']) <= -1:
         bankPEOTM = (nf_bank['lastPrice']-100)
         print('For BANK NIFTY SELL PUT range are {} ATM {} ITM {} OTM at time {}'.format(bankPEATM,bankPEITM,bankPEOTM,endtime),file=open("NSEmarket.txt", "a"))
     else:
-        print('Medium Risk to BUY BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        print('Medium Risk to sell BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
         print('Medium Risk For BANK NIFTY buy CALL',file=open("NSEmarket.txt", "a"))
 
 #Bank CALL BUY Logic depend on NIFTY Bank Index
