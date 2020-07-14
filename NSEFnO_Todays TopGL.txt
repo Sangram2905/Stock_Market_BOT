@@ -1,0 +1,16 @@
+
+Start data pull from NSE server at time  2020-07-14 17:45:13
+
+NIFTY 50 index current value is 10607.35 and precent change is -1.81 
+
+Todays BUY PUTs  from Top Losers Stock (TLS) list
+Todays BUY CALLs from Top Gainers Stock (TGS) list
+
+BUY PUT  for TLS BHEL lot size 21000 and below strike price 39.15
+BUY PUT  for TLS IBULHSGFIN lot size 3100 and below strike price 222.0
+BUY PUT  for TLS RBLBANK lot size 2600 and below strike price 165.35
+BUY PUT  for TLS AXISBANK lot size 1200 and below strike price 418.5
+BUY PUT  for TLS INDUSINDBK lot size 800 and below strike price 510.0
+BUY CALL for TGS BIOCON lot size 2300.0 and above strike price 436.85
+BUY CALL for TGS TATACHEM lot size 2000.0 and above strike price 306.25
+BUY CALL for TGS TORNTPHARM lot size 500.0 and above strike price 2429.0
