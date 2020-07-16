@@ -21,6 +21,8 @@ import datetime
 from nsetools import Nse
 import math
 import os
+import yfinance as yf
+
 import sys
 from pprint import pprint # just for neatness of display
 from datetime import datetime
@@ -28,7 +30,8 @@ print('#########################################################################
 print('',file=open("NSEmarket.txt", "a"))
 starttime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") #program data pull start time
 pst = datetime.now().strftime("%H:%M")
-
+day = datetime.now().strftime("%A")
+daydate = datetime.now().strftime("%d")
 print('AI Result Start Time',starttime,file=open("NSEmarket.txt", "a"))
 print('Disclaimer: All posts are Technology demonstration its not an Financial advice.',file=open("NSEmarket.txt", "a"))
 print('Read full Disclaimer at start of the Channel',file=open("NSEmarket.txt", "a"))
@@ -45,7 +48,7 @@ nse = Nse()  # NSE object creation
 
 #print (nse)
 
-listallindex = nse.get_index_list()
+#listallindex = nse.get_index_list()
 #lotsize = nse.get_fno_lot_sizes()
 
 #riskmoney = float(input("Enter the Risk/Max Money for trade : "))
@@ -832,6 +835,16 @@ print('',file=open("NSEmarket.txt", "a"))
 
 ###################### IT sector Options ################################# 
 
+
+if day == str('Thursday'):
+    if int(daydate) < 24:
+        print('Today is Weekly option expiry day : Carefully trade todays expiry day Call or Put options',file=open("NSEmarket.txt", "a"))
+        print('The Call or Put options suggested for next week Date',file=open("NSEmarket.txt", "a"))
+    if int(daydate) >=24:
+        print('Today is Monthly option expiry day : Carefully trade todays expiry day Call or Put options',file=open("NSEmarket.txt", "a"))
+    
+    
+
 print('Todays options trades at time {} are as follows'.format(endtime),file=open("NSEmarket.txt", "a")) 
 print('',file=open("NSEmarket.txt", "a"))  
 nint_len = len(nintgrtz)+len(nintnegt)+len(nintinzero)
@@ -883,9 +896,9 @@ print('',file=open("NSEmarket.txt", "a"))
    
 ###################### N50 Options #################################
 
-print('The NIFTY 50 weekly per lot Option price calculated on Rs. 5000 margin Money',file=open("NSEmarket.txt", "a"))
+print('The NIFTY 50 weekly per lot ATM Option price calculated on Rs. 5000 margin Money',file=open("NSEmarket.txt", "a"))
 
-print('You can increase or decrease per lot Option price depends on your daily margin Money',file=open("NSEmarket.txt", "a"))
+print('You can increase or decrease per lot Option price & strick price depends on your daily margin Money & Risk',file=open("NSEmarket.txt", "a"))
 
 print('',file=open("NSEmarket.txt", "a"))
 
@@ -951,20 +964,40 @@ ndnf = format(ndnr,'.2f')
 ndp = int(50 * round(float(ndpf)/50))
 ndn = int(50 * round(float(ndnf)/50))
 
-print("At this time Aprox NIFTY 50 High is {} and low is {} ".format(ndpf,ndnf),file=open("NSEmarket.txt", "a"))
+## Retrive data from US VIX data from CSV file created from program US_market.py
+
+dr_usvix = pd.read_csv('USVIX.csv')
+df_usvix = pd.DataFrame(data=dr_usvix)
+
+vixtime = datetime.now().strftime("%H") 
+if int(vixtime) == 9:
+    print("At this time Aprox NIFTY 50 Max High is {} and Max low is {} ".format(ndpf,ndnf),file=open("NSEmarket.txt", "a"))
+    print('',file=open("NSEmarket.txt", "a"))    
+    # Simple Stock Option suggestion BOT run
+    import Simple_Stock_Option_suggestion_BOT
+    #Volatility Index VIX (^VIX)
+    usvixfr = df_usvix.iloc[0][-1]
+    
+    if usvixfr < 0.0 and float(nf_indiavix['lastPrice']) > 0.0:
+        print('High probability of Market will change the direction from Negative to Positive ',file=open("NSEmarket.txt", "a"))
+    elif usvixfr > 0.0 and float(nf_indiavix['lastPrice']) > 0.0:
+        print('High probability of Market will change the direction from Positive to Negative',file=open("NSEmarket.txt", "a"))
+
 print('',file=open("NSEmarket.txt", "a"))    
 
 
 ### VIX   high > 15.811 < low VIX 
+#print('INDIA VIX  index current value is {} Low and percent change is {} '.format(nf_indiavix['lastPrice'],nf_indiavix['pChange'],'.2f')) 
+
 #Low VIX Logic
 if float(nf_indiavix['lastPrice']) > (15.811-vixmpc) and float(nf_indiavix['lastPrice']) < 15.811:
-    print("The VIX is Low ",nf_indiavix['lastPrice'],file=open("NSEmarket.txt", "a"))
+    print("The VIX is {} Low and percent change is {} ".format(nf_indiavix['lastPrice'],nf_indiavix['pChange']),file=open("NSEmarket.txt", "a"))
     if float(nf_indiavix['pChange']) < 0.0 :
         print('Probability of NIFTY 50 is going UP to ' ,ndp,file=open("NSEmarket.txt", "a"))
     elif float(nf_indiavix['pChange']) > 0.0 :
         print('Probability of NIFTY 50 is going down to ' ,ndn,file=open("NSEmarket.txt", "a"))
 if float(nf_indiavix['lastPrice']) < (15.811-vixmpc):
-    print("The VIX is very Low ",nf_indiavix['lastPrice'],file=open("NSEmarket.txt", "a"))
+    print("The VIX is {} Very Low and percent change is {} ".format(nf_indiavix['lastPrice'],nf_indiavix['pChange']),file=open("NSEmarket.txt", "a"))
     if float(nf_indiavix['pChange']) < 0.0 :
         print('Probability of NIFTY 50 is going UP to ' ,ndp,file=open("NSEmarket.txt", "a"))
     elif float(nf_indiavix['pChange']) > 0.0 :
@@ -973,13 +1006,13 @@ if float(nf_indiavix['lastPrice']) < (15.811-vixmpc):
 
 #HIGH VIX Logic        
 if float(nf_indiavix['lastPrice']) > (15.811+vixmpc):
-    print("The VIX is Very high ",nf_indiavix['lastPrice'],file=open("NSEmarket.txt", "a"))
+    print("The VIX is Very high  {}  and percent change is {} ".format(nf_indiavix['lastPrice'],nf_indiavix['pChange']),file=open("NSEmarket.txt", "a"))
     if float(nf_indiavix['pChange']) < 0.0 :
         print('Probability of NIFTY 50 is going UP to ' ,ndp,file=open("NSEmarket.txt", "a"))
     elif float(nf_indiavix['pChange']) > 0.0 :
         print('Probability of NIFTY 50 is going down to ' ,ndn,file=open("NSEmarket.txt", "a"))
 if float(nf_indiavix['lastPrice']) < (15.811+vixmpc) and float(nf_indiavix['lastPrice']) > 15.811:
-    print("The VIX is High ",nf_indiavix['lastPrice'],file=open("NSEmarket.txt", "a"))
+    print("The VIX is High  {} and percent change is {} ".format(nf_indiavix['lastPrice'],nf_indiavix['pChange']),file=open("NSEmarket.txt", "a"))
     if float(nf_indiavix['pChange']) < 0.0 :
         print('Probability of NIFTY 50 is going UP to ' ,ndp,file=open("NSEmarket.txt", "a"))
     elif float(nf_indiavix['pChange']) > 0.0 :
@@ -997,7 +1030,7 @@ rkf = format((riskmoney/75),'.2f')
 rkr = int(1 * round(float(rkf)/1))
 
 #n50 PUT BUY Logic 
-if float(nf_n50['pChange']) <= 0.01 and float(nf_n50['pChange']) > -0.75:
+if float(nf_n50['pChange']) <= 0.01 and float(nf_n50['pChange']) > -0.95:
     nporm = 1 # Risk Money variable
     if len(n50negt) >= (n50_len*0.7) :
         if nporm > 0.0:
@@ -1011,7 +1044,7 @@ if float(nf_n50['pChange']) <= 0.01 and float(nf_n50['pChange']) > -0.75:
             print("For NIFTY 50 Buy PE for {} ATM at max {} Rs".format(nf_n50['lastPrice'],prkr),file=open("NSEmarket.txt", "a"))
     else:
         #print('Medium Risk to BUY NIFTY 50 PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
-        print("Medium Risk to BUY NIFTY 50 PE for {} ITM at max {} Rs".format(ndn-100,prkr),file=open("NSEmarket.txt", "a"))
+        print("Medium Risk to BUY NIFTY 50 PE for {} ITM".format(ndn-100),file=open("NSEmarket.txt", "a"))
         print('High Risk For NIFTY 50 BUY Call',file=open("NSEmarket.txt", "a"))
 
 
@@ -1047,7 +1080,7 @@ if float(nf_n50['pChange']) <= -2 and float(nseindexs) < 0.0:
         
 #n50 CALL BUY Logic  ##working correctly 
 
-if float(nf_n50['pChange']) >= 0.01 and float(nf_n50['pChange']) < 0.85 and float(nseindexs) > 0.0:
+if float(nf_n50['pChange']) >= 0.01 and float(nf_n50['pChange']) < 0.95 and float(nseindexs) > 0.0:
     ncorm = -1 # Risk Money variable
     if float(len(n50negt)) <= (n50_len*0.30) :
         if ncorm < 0.0:
@@ -1061,7 +1094,7 @@ if float(nf_n50['pChange']) >= 0.01 and float(nf_n50['pChange']) < 0.85 and floa
             print("For NIFTY 50 Buy CE for {} ATM at max {} Rs".format(nf_n50['lastPrice'],crkr),file=open("NSEmarket.txt", "a"))
     else:
         #print('Medium Risk to buy NIFTY 50  CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
-        print("Medium Risk to buy NIFTY 50 CE for {} ITM at max {} Rs".format(ndp+100,crkr),file=open("NSEmarket.txt", "a"))
+        print("Medium Risk to buy NIFTY 50 CE for {} ITM".format(ndp+100),file=open("NSEmarket.txt", "a"))
         print('High risk For NIFTY 50 BUY PUT',file=open("NSEmarket.txt", "a") )
 
 if ncorm < 0.0:
@@ -1079,7 +1112,7 @@ print('',file=open("NSEmarket.txt", "a"))
 
 #n50 CALL SELL Logic
   
-if float(nf_n50['pChange']) >= 1.5:
+if float(nf_n50['pChange']) >= 2.0:
     if len(n50negt) <= (n50_len*0.4) :
         #print('Total negative are less than 20%')
         n50CEITM = (ndn) 
@@ -1097,8 +1130,8 @@ elif float(nf_n50['pChange']) <= -2 and float(nseindexs) < 0.0:print('Sell Put l
 elif float(nf_n50['pChange']) >= 0.01 and float(nf_n50['pChange']) < 0.85 and float(nseindexs) > 0.0: print('Buy Call logic')
 elif float(nf_n50['pChange']) >= 1.5:print('Sell Call logic')
 else:
-    print('Hold your NIFTY 50 CE or PE positions for next market move',file=open("NSEmarket.txt", "a"))
-    print('Hold your NIFTY 50 CE or PE positions for next market move')
+    print('Hold your existing NIFTY 50 CE or PE positions for next market move',file=open("NSEmarket.txt", "a"))
+    print('Hold your existing NIFTY 50 CE or PE positions for next market move')
 
 
 print('',file=open("NSEmarket.txt", "a"))    
@@ -1160,7 +1193,7 @@ if (float(nf_bank['pChange']) > -1) and (float(nf_bank['pChange']) <= 0.01):
             print("For BANKNIFTY Week buy  PE for  {} ATM at max {} Rs".format(nf_bankr,pbrkr),file=open("NSEmarket.txt", "a"))
     else:
         #print('Medium Risk to BUY BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
-        print("Medium Risk to buy BANKNIFTY PE for {} ITM at max {} Rs".format((nf_bankr-250),pbrkr),file=open("NSEmarket.txt", "a"))
+        print("Medium Risk to buy BANKNIFTY PE for {} ITM".format((nf_bankr-250)),file=open("NSEmarket.txt", "a"))
         print('High Risk For BANKNIFTY BUY CALL',file=open("NSEmarket.txt", "a"))
 
 
@@ -1177,7 +1210,7 @@ print("BANKNIFTY Week buy  PE for  {} OTM at max {} Rs".format((nf_bankr+bnonep)
 print("")
        
 #Bank PUT SELL Logic depend on NIFTY Bank Index
-if float(nf_bank['pChange']) <= -1.0:
+if float(nf_bank['pChange']) <= -1.5:
     if len(banknegt) >= (bank_len*0.4) :
         #print('Total negative are more than 70%')
         bankPEITM = (nf_bank['lastPrice']+100) 
@@ -1193,7 +1226,7 @@ if float(nf_bank['pChange']) <= -1.0:
         
 if (float(nf_bank['pChange']) >= 0.01) and (float(nf_bank['pChange']) < 1):
     bcorm = -1 # Risk Money variable
-    if len(banknegt) <= (bank_len*0.3) :
+    if len(banknegt) <= (bank_len*0.20) :
         #print('Total negative are less than 20%')
         if bcorm < 0.0:
             cbrkr = brkr+(brkr*0.20)
@@ -1205,7 +1238,7 @@ if (float(nf_bank['pChange']) >= 0.01) and (float(nf_bank['pChange']) < 1):
             print("For BANKNIFTY Week buy  CE for  {} ATM at max {} Rs".format(nf_bankr,cbrkr),file=open("NSEmarket.txt", "a"))
     else:
         print('Medium Risk to Buy BANKNIFTY CALL at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
-        print('Medium Risk to Buy BANKNIFTY PUT  at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
+        #print('High Risk to Buy BANKNIFTY PUT at time {}'.format(endtime),file=open("NSEmarket.txt", "a"))
 
 if bcorm < 0.0:
     cbrkr = brkr+(brkr*0.20)
@@ -1220,7 +1253,7 @@ print("")
 
 #Bank CALL SELL Logic depend on NIFTY Bank Index
         
-if float(nf_bank['pChange']) >= 1.0:
+if float(nf_bank['pChange']) >= 1.5:
     if len(banknegt) <= (bank_len*0.5) :
         #print('Total negative are less than 50%')
         bankCEITM = (nf_bank['lastPrice']-50) 
