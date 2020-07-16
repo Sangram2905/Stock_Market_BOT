@@ -1,5 +1,8 @@
 # Stock_Market_BOT 
 ## Disclaimer: Not financial advice, just an programing skill demo. ##
+## pip install yfinance  for yahoofinance 
+
+## Required to run BOT/ Program a Python IDE and install NSE API with "pip install nsetools" in CMD
 
 The repository contents Stock Market BOTs for different Trading ideas 
 The BOT’s are as follows :
