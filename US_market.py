@@ -22,59 +22,31 @@ import math
 from datetime import datetime
 print('###############################################################################',file=open("USmarket.txt", "a"))
 starttime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") #program data pull start time
+pst = datetime.now().strftime("%H:%M")
+day = datetime.now().strftime("%A")
+daydate = datetime.now().strftime("%d")
+if day == str('Monday'):
+    print('US Markets On Friday: ',file=open("USmarket.txt", "a"))
+
+    
+
+
 print('Start time of BOT',starttime,file=open("USmarket.txt", "a"))
 
 print('Start data pull from Yahoo server at time ',starttime)
-"""
-# #Creating data frame for Yahoo Finance index stocks
-
-# dr_yus = pd.read_csv('USIndexYsymbols.csv',index_col = 'ysymbols')
-# df_yus = pd.DataFrame(data=dr_yus)
-
-# df_yusc = df_yus[0:2]
-
-# yusindex = []
-# for i,r in df_yusc.iterrows():
-#     yus =  yf.Ticker(i)
-#     yusi = yus.info
-#     yusindex.append(yusi) 
-
-# # To make simple list from dictionarys used in above    
-# nislist=[]
-
-# for index in range(len(nis)):
-#     for key in nis[index]:
-#         if key == 'symbol':
-#             #retrive each value
-#             ins = nis[index]['symbol']
-#             icn = nis[index]['companyName']
-#             iop = nis[index]['open']
-#             iltp = nis[index]['lastPrice']
-#             ipc = nis[index]['pChange']
-            
-#             #appended values
-#             nislist.append([ins,icn,iop,iltp,ipc])
-    
-# df_nislist = pd.DataFrame(nislist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
-# df_nislist = pd.DataFrame(df_nislist).set_index('symbol')
-# df_nislist.replace({None: 0.5}, inplace=True)
-
-"""
 
 #United states index
 sp500 = yf.Ticker("^GSPC")
 nf_sp500 = sp500.info
-nf_sp500pcr = float((((nf_sp500['dayLow']+nf_sp500['dayHigh'])/2-nf_sp500['previousClose'])/nf_sp500['previousClose'])*100)
+nf_sp500pcr = float(((((nf_sp500['dayLow']+nf_sp500['dayHigh'])/2)-nf_sp500['previousClose'])/nf_sp500['previousClose'])*100)
 nf_sp500pc = format(nf_sp500pcr,'.2f')
-#print('US S&P 500 index is {} and percent change is {}'.format(nf_sp500['dayLow'],nf_sp500pc))
+print('US S&P 500 index is {} and percent change is {}'.format(nf_sp500['dayLow'],nf_sp500pc))
 
 dow = yf.Ticker("^DJI")
 nf_dow = dow.info
 nf_dowpcrr = float((((nf_dow['dayLow']+nf_dow['dayHigh'])/2-nf_dow['previousClose'])/nf_dow['previousClose'])*100)
 nf_dowpc = format(nf_dowpcrr,'.2f')
 #print('US DOW index is {} and percent change is {}'.format(nf_dow['dayLow'],nf_dowpc))
-
-
 
 nasd = yf.Ticker("^IXIC")
 nf_nasd = nasd.info
@@ -152,7 +124,7 @@ nf_usvixf = format(nf_usvixfr,'.2f')
 
 # apend values in csv file 
 
-print('US VIX',nf_usvix['dayLow'],nf_usvixfr,file=open("USVIX.csv", "a"))
+print(nf_usvixfr,file=open("USVIX.csv", "a"))
 
 
 #print('US VIX index is {} and percent change is {}'.format(nf_usvix['dayLow'],nf_usvixf))
@@ -219,7 +191,7 @@ uspcrr = uspcr/10
 uspc = format(uspcrr,'.2f')
 
 print('Total Persent Change in all US Index,sector & future is {}'.format(uspcr))
-print('Avrage Persent Change in all US Index and sector & future is {}'.format(uspc),file=open("USmarket.txt", "a"))
+print('Average Percent Change in all US Index and sector & future is {}'.format(uspc),file=open("USmarket.txt", "a"))
 
 print('',file=open("USmarket.txt", "a"))
 
@@ -237,3 +209,40 @@ print('End of BOT')
 
 ###########################################################################################
 
+"""
+Future imlimentation 
+
+# #Creating data frame for Yahoo Finance index stocks
+
+# dr_yus = pd.read_csv('USIndexYsymbols.csv',index_col = 'ysymbols')
+# df_yus = pd.DataFrame(data=dr_yus)
+
+# df_yusc = df_yus[0:2]
+
+# yusindex = []
+# for i,r in df_yusc.iterrows():
+#     yus =  yf.Ticker(i)
+#     yusi = yus.info
+#     yusindex.append(yusi) 
+
+# # To make simple list from dictionarys used in above    
+# nislist=[]
+
+# for index in range(len(nis)):
+#     for key in nis[index]:
+#         if key == 'symbol':
+#             #retrive each value
+#             ins = nis[index]['symbol']
+#             icn = nis[index]['companyName']
+#             iop = nis[index]['open']
+#             iltp = nis[index]['lastPrice']
+#             ipc = nis[index]['pChange']
+            
+#             #appended values
+#             nislist.append([ins,icn,iop,iltp,ipc])
+    
+# df_nislist = pd.DataFrame(nislist,columns=['symbol','Company Name','Open price','LTP','precent change'] )        
+# df_nislist = pd.DataFrame(df_nislist).set_index('symbol')
+# df_nislist.replace({None: 0.5}, inplace=True)
+
+"""
