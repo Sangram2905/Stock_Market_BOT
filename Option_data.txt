@@ -1,0 +1,917 @@
+############################################################################
+
+AI for Option data Start Time 2020-07-29 09:57:52
+BankNifty Higest Open Intrest PCR ratio  0.66
+
+BankNifty Total Open Intrest PCR ratio  0.72
+
+It suggests that bearish sentiment is building in the market.
+This considered a bullish indicator.
+OI Resistance 2  23600.0
+OI Resistance 1  23100.0
+BankNifty SP     22100.00
+OI Support 1     22100.0
+OI Support 2     22600.0
+Nifty Higest Open Intrest PCR ratio  0.93
+Nifty Total Open Intrest PCR ratio  1.43
+It suggests that bearish sentiment is building in the market.
+OI Resistance 2  11800.0
+OI Resistance 1  11600.0
+Nifty SP         11300.00
+OI Support 1     11300.0
+OI Support 2     11500.0
+############################################################################
+
+AI for Option data Start Time 2020-07-29 11:03:43
+NIFTY 50   index current value is 11278.7 and percent change is -0.19 
+BankNifty Higest Open Intrest PCR ratio  0.63
+
+BankNifty Total Open Intrest PCR ratio  0.72
+
+BN: It suggests that bearish sentiment is building in the market.
+
+OI Resistance 2  23600.0
+OI Resistance 1  23100.0
+BankNifty SP     22200.00
+OI Support 1     22100.0
+OI Support 2     22600.0
+
+
+Nifty Higest Open Intrest PCR ratio  0.85
+Nifty Total Open Intrest PCR ratio  1.30
+
+NF: It suggests that bearish sentiment is building in the market.
+OI Resistance 2  11600.0
+OI Resistance 1  11800.0
+Nifty SP         11300.00
+OI Support 1     11500.0
+OI Support 2     11300.0
+############################################################################
+
+AI for Option data Start Time 2020-07-29 11:21:56
+NIFTY 50   index current value is 11262.95 and percent change is -0.33 
+BankNifty Higest Open Intrest PCR ratio  0.63
+
+BankNifty Total Open Intrest PCR ratio  0.72
+
+BN: It suggests that bearish sentiment is building in the market.
+OI Resistance 2  23600.0
+OI Resistance 1  23100.0
+BankNifty SP     22200.00
+OI Support 1     22100.0
+OI Support 2     22600.0
+Nifty Higest Open Intrest PCR ratio  0.85
+Nifty Total Open Intrest PCR ratio  1.30
+NF: It suggests that bearish sentiment is building in the market.
+OI Resistance 2  11600.0
+OI Resistance 1  11800.0
+Nifty SP         11250.00
+OI Support 1     11500.0
+OI Support 2     11300.0
+############################################################################
+
+AI for Option data Start Time 2020-07-29 12:01:33
+NIFTY 50   index current value is 11297.25 and percent change is -0.03 
+
+BankNifty Higest Open Intrest PCR ratio  0.63
+
+BankNifty Total Open Intrest PCR ratio  0.72
+
+BN: It suggests that bearish sentiment is building in the market.
+
+OI Resistance 2  22500.0
+OI Resistance 1  23100.0
+BankNifty SP     22300.00
+OI Support 1     22100.0
+OI Support 2     21500.0
+
+
+Nifty Higest Open Intrest PCR ratio  0.85
+
+Nifty Total Open Intrest PCR ratio  1.30
+
+NF: It suggests that bearish sentiment is building in the market.
+
+OI Resistance 2  11300.0
+OI Resistance 1  11500.0
+Nifty SP         11300.00
+OI Support 1     11200.0
+OI Support 2     11000.0
+############################################################################
+
+AI for Option data Start Time 2020-07-29 12:25:08
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.63
+
+BankNifty Total Open Intrest PCR ratio  0.72
+
+BN: It suggests that bearish sentiment is building in the market.
+
+
+Max High OI R2  22500.0
+2nd High OI R1  23100.0
+BankNifty SP    22300.00
+2nd High OI S1  22100.0
+Max High OI S2  21500.0
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.85
+
+Nifty Total Open Intrest PCR ratio  1.30
+
+NF: It suggests that bearish sentiment is building in the market.
+
+
+OI Resistance 2  11300.0
+OI Resistance 1  11500.0
+Nifty SP         11300.00
+OI Support 1     11200.0
+OI Support 2     11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 13:04:46
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 13:07:27
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.70
+
+BankNifty Total Open Intrest PCR ratio  0.82
+
+BN: It suggests that bearish sentiment is building in the market.
+
+
+Max High OI R2  22500.0
+2nd High OI R1  23100.0
+BankNifty SP    22250.00
+2nd High OI S1  22600.0
+Max High OI S2  22000.0
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.85
+
+Nifty Total Open Intrest PCR ratio  1.30
+
+NF: It suggests that bearish sentiment is building in the market.
+
+
+Max High OI R2  11300.0
+2nd High OI R1  11500.0
+Nifty SP        11250.00
+2nd High OI S1  11200.0
+Max High OI S2  11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 13:16:58
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.70
+
+BankNifty Total Open Intrest PCR ratio  0.82
+
+BN: It suggests that bearish sentiment is building in the market.
+
+
+2nd High  Call_OI R1    23100.0
+Max High  Call_OI R2    22500.0
+BankNifty Strick_Price  22300.00
+2nd High  Put_OI S1     22600.0
+Max High  Put_OI S2     22000.0
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.85
+
+Nifty Total Open Intrest PCR ratio  1.30
+
+NF: It suggests that bearish sentiment is building in the market.
+
+
+2nd High Call_OI R1  11500.0
+Max High Call_OI R2  11300.0
+Nifty Strick_Price   11300.00
+2nd High  Put_OI S1  11200.0
+Max High  Put_OI S2  11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 13:46:21
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.70
+
+BankNifty Total Open Intrest PCR ratio  0.82
+
+BN: It suggests that bearish sentiment is building in the market.
+
+
+2nd highest   Call_OI R1  22500.0
+Max highest   Call_OI R2  23000.0
+BankNifty Strick_Price    22200.00
+2nd highest   Put_OI S1   22000.0
+Max highest   Put_OI S2   21500.0
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.85
+
+Nifty Total Open Intrest PCR ratio  1.30
+
+NF: It suggests that bearish sentiment is building in the market.
+
+
+2nd highest  Call_OI R1  11500.0
+Max highest  Call_OI R2  11300.0
+Nifty  50  Strick_Price  11250.00
+2nd highest   Put_OI S1  11200.0
+Max highest   Put_OI S2  11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 14:02:31
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.73
+
+BankNifty Total Open Intrest PCR ratio  0.79
+
+BN: It suggests that bearish sentiment is building in the market.
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22200.00
+2nd highest   Put_OI S1   22000.0
+Max highest   Put_OI S2   21500.0
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.70
+
+Nifty Total Open Intrest PCR ratio  1.22
+
+NF: It suggests that bearish sentiment is building in the market.
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11250.00
+2nd highest   Put_OI S1  11200.0
+Max highest   Put_OI S2  11000.0
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22200.00
+2nd highest   Put_OI S1   22000.0
+Max highest   Put_OI S2   21500.0
+
+Ideal Buy Call near BankNifty Strick price 22000.0
+Buy Nifty 22750.0 CE 
+Ideal Buy Put near Nifty 50 Strick price 22500.0
+Buy Nifty 21750.0 PE 
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11250.00
+2nd highest   Put_OI S1  11200.0
+Max highest   Put_OI S2  11000.0
+
+Ideal Buy Call near Nifty 50 Strick price 11200.0
+Buy Nifty 11400.0 CE 
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Buy Nifty 11100.0 PE 
+############################################################################
+
+AI for Option data Start Time 2020-07-29 15:08:09
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.73
+
+BankNifty Total Open Intrest PCR ratio  0.79
+
+BN: It suggests that bearish sentiment is building in the market.
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   22000.0
+Max highest   Put_OI S2   21500.0
+
+Ideal Buy Call near BankNifty Strick price 22000.0
+Buy BankNifty 22750.0 CE 
+
+Ideal Buy Put near BankNifty  Strick price 22500.0
+Buy BankNifty 21750.0 PE 
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.70
+
+Nifty Total Open Intrest PCR ratio  1.22
+
+NF: It suggests that bearish sentiment is building in the market.
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11200.00
+2nd highest   Put_OI S1  11200.0
+Max highest   Put_OI S2  11000.0
+
+Ideal Buy Call near Nifty 50 Strick price 11200.0
+Buy Nifty 11400.0 CE 
+
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Buy Nifty 11100.0 PE 
+############################################################################
+
+AI for Option data Start Time 2020-07-29 16:13:12
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.73
+
+BankNifty Total Open Intrest PCR ratio  0.79
+
+BN: It suggests that bearish sentiment is building in the market.
+Ideal Buy Put near BankNifty Strick price 22500.0
+Buy BankNifty 21750.0 PE 
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   22000.0
+Max highest   Put_OI S2   21500.0
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.70
+
+Nifty Total Open Intrest PCR ratio  1.22
+
+NF: It suggests that bearish sentiment is building in the market.
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Buy Nifty 11100.0 PE 
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11200.00
+2nd highest   Put_OI S1  11200.0
+Max highest   Put_OI S2  11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 16:51:20
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.55
+
+BankNifty Total Open Intrest PCR ratio  0.65
+
+
+BN: This considered a bullish indicator.
+Ideal Buy Call near BankNifty Strick price 20000.0
+Ideal Buy BankNifty 22750.0 CE OTM
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   20000.0
+Max highest   Put_OI S2   21500.0
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.73
+
+Nifty Total Open Intrest PCR ratio  1.14
+
+NF: It suggests that bearish sentiment is building in the market.
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Ideal Buy Nifty 10500.0 PE OTM
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11200.00
+2nd highest   Put_OI S1  10000.0
+Max highest   Put_OI S2  11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 17:55:43
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.55
+
+BankNifty Total Open Intrest PCR ratio  0.65
+
+Ideal Buy Put near BankNifty Strick price 22500.0
+Ideal Buy BankNifty 20750.0 PE OTM
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   20000.0
+Max highest   Put_OI S2   21500.0
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.73
+
+Nifty Total Open Intrest PCR ratio  1.14
+
+
+Ideal Buy Call near Nifty 50 Strick price 10000.0
+Ideal Buy Nifty 11400.0 CE OTM
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11200.00
+2nd highest   Put_OI S1  10000.0
+Max highest   Put_OI S2  11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 18:32:16
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 18:33:51
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 20:44:40
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 20:46:16
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.55
+
+BankNifty Total Open Intrest PCR ratio  0.65
+
+############################################################################
+
+AI for Option data Start Time 2020-07-29 20:50:50
+
+For Nifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.55
+
+BankNifty Total Open Intrest PCR ratio  0.65
+
+
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   20000.0
+Max highest   Put_OI S2   21500.0
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.73
+
+Nifty Total Open Intrest PCR ratio  1.14
+
+
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11200.00
+2nd highest   Put_OI S1  10000.0
+Max highest   Put_OI S2  11000.0
+
+############################################################################
+
+AI for Option data Start Time 2020-07-30 08:06:33
+
+For BankNifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.55
+
+BankNifty Total Open Intrest PCR ratio  0.64
+
+
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   20000.0
+Max highest   Put_OI S2   21500.0
+
+For Bank Nifty Avrage Option price
+For avrage Call Option price is 56.9 and Upper limit 65.43499999999999 and lower limit 48.364999999999995
+
+For avrage Put Option price is 13.0 and Upper limit 14.95 and lower limit 11.05
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.75
+
+Nifty Total Open Intrest PCR ratio  1.13
+
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Ideal Buy Nifty 10500.0 PE OTM
+
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11200.00
+2nd highest   Put_OI S1  10000.0
+Max highest   Put_OI S2  11000.0
+
+For Bank Nifty Avrage Option price
+For avrage Call Option price is 31.45 and Upper limit 36.1675 and lower limit 26.7325
+
+For avrage Put Option price is 23.275 and Upper limit 26.766249999999996 and lower limit 19.783749999999998
+
+############################################################################
+
+AI for Option data Start Time 2020-07-30 09:21:35
+
+For BankNifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.56
+
+BankNifty Total Open Intrest PCR ratio  0.65
+
+Ideal Buy Put near BankNifty Strick price 22500.0
+Ideal Buy BankNifty 20750.0 PE OTM
+
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22200.00
+2nd highest   Put_OI S1   20000.0
+Max highest   Put_OI S2   21500.0
+
+For Bank Nifty Avrage Option price
+############################################################################
+
+AI for Option data Start Time 2020-07-30 09:37:12
+
+For BankNifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.56
+
+BankNifty Total Open Intrest PCR ratio  0.65
+
+
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   20000.0
+Max highest   Put_OI S2   21500.0
+
+For Bank Nifty Avrage Option price
+
+For avrage Call Option price is 85.43 and Upper limit 98.24833333333333 and lower limit 72.61833333333334
+
+For avrage Put Option price is 63.23 and Upper limit 72.71833333333332 and lower limit 53.74833333333333
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.76
+
+Nifty Total Open Intrest PCR ratio  1.13
+
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Ideal Buy Nifty 10500.0 PE OTM
+
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11250.00
+2nd highest   Put_OI S1  10000.0
+Max highest   Put_OI S2  11000.0
+
+For Bank Nifty Avrage Option price
+For avrage Call Option price is 18.03 and Upper limit 20.738333333333333 and lower limit 15.328333333333335
+For avrage Put Option price is 11.07 and Upper limit 12.726666666666667 and lower limit 9.406666666666668
+
+############################################################################
+
+AI for Option data Start Time 2020-07-30 09:49:04
+
+For BankNifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.64
+
+BankNifty Total Open Intrest PCR ratio  0.69
+
+Ideal Buy Put near BankNifty Strick price 22500.0
+Ideal Buy BankNifty 21750.0 PE OTM
+
+
+
+Max highest   Call_OI R2  23000.0
+2nd highest   Call_OI R1  22500.0
+BankNifty Strick_Price    22100.00
+2nd highest   Put_OI S1   22000.0
+Max highest   Put_OI S2   21500.0
+
+For Bank Nifty Avrage Option price
+For avrage Call Option price is 62.33 and Upper limit 71.68333333333334 and lower limit 52.983333333333334
+
+For avrage Put Option price is 91.70 and Upper limit 105.455 and lower limit 77.94500000000001
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.77
+
+Nifty Total Open Intrest PCR ratio  1.21
+
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Ideal Buy Nifty 11150.0 PE OTM
+
+
+
+Max highest  Call_OI R2  11300.0
+2nd highest  Call_OI R1  11500.0
+Nifty  50  Strick_Price  11250.00
+2nd highest   Put_OI S1  11100.0
+Max highest   Put_OI S2  11200.0
+
+For Nifty Avrage Option price
+For avrage Call Option price is 15.22 and Upper limit 17.499166666666664 and lower limit 12.934166666666666
+
+For avrage Put Option price is 36.52 and Upper limit 41.994166666666665 and lower limit 31.039166666666667
+
+############################################################################
+
+AI for Option data Start Time 2020-07-30 14:37:08
+
+For BankNifty Option Data
+
+BankNifty Higest Open Intrest PCR ratio  0.83
+
+BankNifty Total Open Intrest PCR ratio  0.77
+
+Ideal Buy Put near BankNifty Strick price 23000.0
+Ideal Buy BankNifty 21750.0 PE OTM
+
+Max highest 23.76 Lakh Call_OI at SP 22500.0 R2 
+2nd highest 20.06 Lakh Call_OI at SP 23000.0 R1 
+BankNifty    Current   Strick_Price  21700.00
+2nd highest 15.20 Lakh Put_OI  at SP 21500.0 S1 
+Max highest 19.72 Lakh Put_OI  at SP 22000.0 S2 
+
+For BankNifty Avrage Option price
+For avrage Call Option price is 165.75 and Upper limit 190.61249999999998 and lower limit 140.8875
+
+For avrage Put Option price is 166.02 and Upper limit 190.91916666666665 and lower limit 141.11416666666668
+
+
+For Nifty Option Data
+
+Nifty Higest Open Intrest PCR ratio  0.77
+
+Nifty Total Open Intrest PCR ratio  1.21
+
+Max highest 70.61 Lakh Call_OI at SP 11300.0 R2 
+2nd highest 56.67 Lakh Call_OI at SP 11500.0 R1 
+Nifty 50     Current   Strick_Price  11150.00
+2nd highest 48.25 Lakh Put_OI  at SP 11100.0 S1 
+Max highest 54.29 Lakh Put_OI  at SP 11200.0 S2 
+
+For Nifty 50 Avrage Option price
+For avrage Call Option price is 39.35 and Upper limit 45.2525 and lower limit 33.447500000000005
+
+For avrage Put Option price is 48.12 and Upper limit 55.33416666666666 and lower limit 40.899166666666666
+
+############################################################################
+
+AI for Option data Start Time 2020-07-30 15:37:16
+
+For BankNifty Option Data
+
+BankNifty PCR Data Analysis
+
+BankNifty Higest Open Intrest PCR ratio  0.83
+BankNifty Total Open Intrest PCR ratio  0.77
+
+
+
+
+Max highest 23.76 Lakh Call_OI at SP 22500.0 R2 
+2nd highest 20.06 Lakh Call_OI at SP 23000.0 R1 
+BankNifty    Current   Strick_Price  21600.00
+2nd highest 15.20 Lakh Put_OI  at SP 21500.0 S1 
+Max highest 19.72 Lakh Put_OI  at SP 22000.0 S2 
+
+Ideal Buy Range for Call & Put
+Ideal Buy Call near BankNifty Strick price 21500.0
+Ideal Buy BankNifty 22750.0 CE OTM
+
+Ideal Buy Put near BankNifty Strick price 23000.0
+Ideal Buy BankNifty 21750.0 PE OTM
+
+For BankNifty Avrage Option price
+For avrage Call Option price is 198.63 and Upper limit 228.42833333333334 and lower limit 168.83833333333337
+
+For avrage Put Option price is 198.90 and Upper limit 228.73499999999999 and lower limit 169.065
+
+
+For Nifty Option Data
+
+Nifty PCR Data Analysis
+Nifty Higest Open Intrest PCR ratio  0.77
+
+Nifty Total Open Intrest PCR ratio  1.21
+
+
+
+
+Max highest 70.61 Lakh Call_OI at SP 11300.0 R2 
+2nd highest 56.67 Lakh Call_OI at SP 11500.0 R1 
+Nifty 50     Current   Strick_Price  11100.00
+2nd highest 48.25 Lakh Put_OI  at SP 11100.0 S1 
+Max highest 54.29 Lakh Put_OI  at SP 11200.0 S2 
+
+Ideal Buy Range for CALL or PUT
+Ideal Buy Put near Nifty 50 Strick price 11500.0
+Ideal Buy Nifty 11150.0 PE OTM
+
+Ideal Buy Call near Nifty 50 Strick price 11100.0
+Ideal Buy Nifty 11400.0 CE OTM
+
+For Nifty 50 Avrage Option price
+For avrage Call Option price is 55.50 and Upper limit 63.824999999999996 and lower limit 47.175
+
+For avrage Put Option price is 64.27 and Upper limit 73.90666666666667 and lower limit 54.626666666666665
+
+############################################################################
+
+AI for Option data Start Time 2020-07-30 15:58:47
+
+For BankNifty Option Data
+
+BankNifty PCR Data Analysis
+
+BankNifty Higest Open Intrest PCR ratio  0.83
+BankNifty Total Open Intrest PCR ratio  0.77
+
+A rising put-call ratio, or a ratio greater than .7 or exceeding 1, means that equity traders are buying more puts than calls. It suggests that bearish sentiment is building in the market. Investors are either speculating that the market will move lower or are hedging their portfolios in case there is a sell-off.
+
+
+
+Highest Open Intrest with Sticke Price
+
+Max highest 23.76 Lakh Call_OI at SP 22500.0 R2 
+2nd highest 20.06 Lakh Call_OI at SP 23000.0 R1 
+BankNifty    Current   Strick_Price  21600.00
+2nd highest 15.20 Lakh Put_OI  at SP 21500.0 S1 
+Max highest 19.72 Lakh Put_OI  at SP 22000.0 S2 
+
+Ideal Buy Range for Call & Put
+
+Ideal Buy BankNifty 22750.0 CE OTM
+Ideal Buy BankNifty 21750.0 PE OTM
+
+For BankNifty Avrage Option price
+The Total avrage Call Option price is 198.63 
+
+The Total avrage Put Option price is 198.90 
+
+
+For Nifty Option Data
+
+Nifty PCR Data Analysis
+
+Nifty Higest Open Intrest PCR ratio  0.77
+
+Nifty Total Open Intrest PCR ratio  1.21
+
+A rising put-call ratio, or a ratio greater than .7 or exceeding 1, means that equity traders are buying more puts than calls. It suggests that bearish sentiment is building in the market. Investors are either speculating that the market will move lower or are hedging their portfolios in case there is a sell-off.
+
+
+
+Highest Open Intrest with Sticke Price
+
+Max highest 70.61 Lakh Call_OI at SP 11300.0 R2
+2nd highest 56.67 Lakh Call_OI at SP 11500.0 R1
+Nifty 56.67 Lakh C_OI & 48.25 Lakh P_OI Current_SP 11100.00
+2nd highest 48.25 Lakh Put_OI  at SP 11100.0 S1
+Max highest 54.29 Lakh Put_OI  at SP 11200.0 S2
+
+
+Ideal Buy Range for CALL or PUT
+
+Ideal Buy Nifty 11400.0 CE OTM
+Ideal Buy Nifty 11150.0 PE OTM
+
+For Nifty 50 Avrage Option price
+The Total avrage Call Option price is 55.50 
+
+The Total avrage Put Option price is 64.27 
+
+############################################################################
+
+AI for Option data Start Time 2020-07-30 16:14:44
+
+For BankNifty Option Data
+
+BankNifty PCR Data Analysis
+
+1. BankNifty Higest Open Intrest PCR ratio  0.83
+2. BankNifty Total Open Intrest PCR ratio  0.77
+
+A rising put-call ratio, or a ratio greater than .7 or exceeding 1, means that equity traders are buying more puts than calls. It suggests that bearish sentiment is building in the market. Investors are either speculating that the market will move lower or are hedging their portfolios in case there is a sell-off.
+
+
+
+Highest Open Intrest with Sticke Price
+
+Max highest 23.76 Lakh Call_OI at SP 22500.0 R2 
+2nd highest 20.06 Lakh Call_OI at SP 23000.0 R1 
+BankNifty    Current   Strick_Price  21600.00
+2nd highest 15.20 Lakh Put_OI  at SP 21500.0 S1 
+Max highest 19.72 Lakh Put_OI  at SP 22000.0 S2 
+
+Ideal Buy Range for Call & Put
+
+1. Ideal Buy BankNifty 22750.0 CE OTM
+2. Ideal Buy BankNifty 21750.0 PE OTM
+
+For BankNifty Total Avrage Option price
+
+1. The Total avrage Call Option price is 198.63 
+2. The Total avrage Put Option price is 198.90 
+
+
+For Nifty Option Data
+
+Nifty PCR Data Analysis
+
+1. Nifty Higest Open Intrest PCR ratio  0.77
+2. Nifty Total Open Intrest PCR ratio  1.21
+
+A rising put-call ratio, or a ratio greater than .7 or exceeding 1, means that equity traders are buying more puts than calls. It suggests that bearish sentiment is building in the market. Investors are either speculating that the market will move lower or are hedging their portfolios in case there is a sell-off.
+
+
+
+Highest Open Intrest with Sticke Price
+
+Max highest 70.61 Lakh Call_OI at SP 11300.0 R2 
+2nd highest 56.67 Lakh Call_OI at SP 11500.0 R1 
+Nifty 50     Current   Strick_Price  11100.00
+2nd highest 48.25 Lakh Put_OI  at SP 11100.0 S1 
+Max highest 54.29 Lakh Put_OI  at SP 11200.0 S2 
+
+Ideal Buy Range for CALL and PUT
+
+1. Ideal Buy Nifty 11400.0 CE OTM
+2. Ideal Buy Nifty 11150.0 PE OTM
+
+For Nifty 50 Total Avrage Option price
+
+1. The Total avrage Call Option price is 55.50 
+2. The Total avrage Put Option price is 64.27 
+
+Highest Open Intrest with Sticke Price
+
+BankNifty have 0.17 Lakh Call_OI & 7.51 Lakh Put_OI for Current SP 21600.00
+Max highest 23.76 Lakh Call_OI at SP 22500.0 R2 
+2nd highest 20.06 Lakh Call_OI at SP 23000.0 R1 
+2nd highest 15.20 Lakh Put_OI  at SP 21500.0 S1 
+Max highest 19.72 Lakh Put_OI  at SP 22000.0 S2 
+

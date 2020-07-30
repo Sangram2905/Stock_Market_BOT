@@ -134,24 +134,6 @@ df_fnosymbollist = pd.DataFrame(df_fnosymbollist).set_index('symbol')
             
 #print(df_fnosymbollist,file=open("FnOresultsToday.txt", "a")) 
 
-
-
-# PUT call Ratio  PCR
-# avrage is 0.7
-# A rising put-call ratio, or a ratio greater than .7 or exceeding 1, means that equity traders are buying more puts than calls. It suggests that bearish sentiment is building in the market. Investors are either speculating that the market will move lower or are hedging their portfolios in case there is a sell-off.
-# A falling put-call ratio, or below .7 and approaching .5, is considered a bullish indicator. It means more calls are being bought versus puts.
-
-#Over purchased options ce
-
-#if PCR < 0.7
- 
-#if above condition meet price will fall after result
-
-
-#if PCR > 0.7
-
-#if above condition meet price will go up after result
-
 ## End of data pull from NSE
 
 
