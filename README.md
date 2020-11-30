@@ -18,3 +18,5 @@ The BOT’s are as follows :
 10] Suggestion BOT for (Long, Short, Intraday) stock buy & sell (in all segment Eq. & F&O)
 11] Stock record High and Low indicator BOT  (Done) {Best time to run program is 30 min before opening Market}
 12] Simple Option valuation Calculate 
+
+Kindly Message me if you have any difficulty too run the programs, Made some small Change to elimnate the direct risk of running as it is.. 
